@@ -1,0 +1,1899 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS FIGURAS SST CUCUTA SAS - Medicina Laboral e Integral</title>
+    <meta name="description" content="IPS especializada en medicina laboral e integral en Cúcuta. Ofrecemos cardiología, neurología, radiología, psicología, laboratorio clínico, odontología y más.">
+    <meta name="keywords" content="IPS Cúcuta, medicina laboral, trabajos en altura, cardiología, neurología, radiología, psicología, odontología, fonoaudiología, audiometría, oftalmología">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-light: #4a86ff;
+            --secondary-color: #00a859;
+            --secondary-light: #5ad48f;
+            --accent-color: #ff6b00;
+            --accent-light: #ff9e4d;
+            --dark-color: #1a2a49;
+            --light-color: #f8f9ff;
+            --text-color: #333;
+            --light-text: #777;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1000') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: -1;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--dark-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            color: var(--primary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            margin: 15px auto 30px;
+            border-radius: 5px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+        
+        .btn:hover::after {
+            transform: translateX(100%);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 86, 179, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 86, 179, 0.3);
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 60px;
+            transition: var(--transition);
+            filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.1));
+        }
+        
+        .logo-img:hover {
+            transform: rotateY(15deg) scale(1.05);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+            color: var(--dark-color);
+        }
+        
+        .nav-links li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+        
+        .nav-links li a:hover:after,
+        .nav-links li a.active:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 168, 89, 0.8) 100%), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="white"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="white"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="white"/></svg>') no-repeat center bottom;
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .hero-btn {
+            min-width: 200px;
+            font-size: 1.1rem;
+            padding: 16px 32px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: var(--border-radius);
+            min-width: 180px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            height: 500px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-features {
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background: var(--light-color);
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--white);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, rgba(249, 249, 255, 0.9) 0%, rgba(235, 245, 255, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 86, 179, 0.03) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-description {
+            margin-bottom: 20px;
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .service-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(8px);
+        }
+        
+        /* Specialties Section */
+        .specialties {
+            background: var(--white);
+        }
+        
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .specialty-card {
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .specialty-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            transition: var(--transition);
+        }
+        
+        .specialty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .specialty-card:hover::before {
+            height: 100%;
+        }
+        
+        .specialty-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+        
+        .specialty-card:hover .specialty-icon {
+            transform: rotateY(360deg);
+            background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+        }
+        
+        .specialty-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .specialty-description {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.03) 0%, rgba(0, 168, 89, 0.03) 100%);
+            position: relative;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 6rem;
+            font-family: Georgia, serif;
+            color: var(--light-color);
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--light-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .rating {
+            color: #ffc107;
+            margin-top: 5px;
+        }
+        
+        /* Clients Section */
+        .clients {
+            background: var(--white);
+        }
+        
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .client-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+        }
+        
+        .client-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .client-logo {
+            max-width: 100%;
+            max-height: 70px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+        
+        .client-item:hover .client-logo {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2128') no-repeat center center/cover;
+            opacity: 0.1;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .contact-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .contact-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.3rem;
+        }
+        
+        .social-link:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: #f8f9ff;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 86, 179, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: #aaa;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-links a:hover i {
+            transform: rotate(360deg);
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact-icon {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            font-size: 1rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            cursor: pointer;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 86, 179, 0.3);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.4rem;
+            }
+            
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 100px 40px 40px;
+                transition: var(--transition);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 0 0 25px;
+                width: 100%;
+            }
+            
+            .nav-links li a {
+                font-size: 1.2rem;
+                padding: 10px 0;
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-btn {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+            }
+            
+            .stat-item {
+                min-width: 160px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .stat-item {
+                min-width: 140px;
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation Classes */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Tawk.to Button Fix */
+        .tawk-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+        
+        /* 3D Logo Animation */
+        .logo-3d {
+            perspective: 1000px;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 50px;
+        }
+        
+        .logo-3d-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateLogo 20s infinite linear;
+        }
+        
+        @keyframes rotateLogo {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        
+        .logo-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        .logo-face img {
+            max-width: 80%;
+        }
+        
+        .logo-face-front {
+            transform: translateZ(150px);
+        }
+        
+        .logo-face-back {
+            transform: rotateY(180deg) translateZ(150px);
+        }
+        
+        .logo-face-right {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        
+        .logo-face-left {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        
+        .logo-face-top {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        
+        .logo-face-bottom {
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <div class="logo-3d">
+                    <div class="logo-3d-inner">
+                        <div class="logo-face logo-face-front">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909897.png" alt="Logo IPS FIGURAS SST">
+                        </div>
+                        <div class="logo-face logo-face-back">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909897.png" alt="Logo IPS FIGURAS SST">
+                        </div>
+                        <div class="logo-face logo-face-right">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909897.png" alt="Logo IPS FIGURAS SST">
+                        </div>
+                        <div class="logo-face logo-face-left">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909897.png" alt="Logo IPS FIGURAS SST">
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <h1>FIGURAS SST</h1>
+                    <p>IPS Medicina Laboral</p>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title animate-in">Medicina Laboral e Integral</h1>
+            <p class="hero-subtitle animate-in">Más de 10 años brindando atención médica especializada con equipos modernos y trato humanizado en Cúcuta y Norte de Santander</p>
+            
+            <div class="hero-btns">
+                <a href="#contacto" class="btn btn-primary hero-btn animate-in">Solicitar Cita</a>
+                <a href="#servicios" class="btn btn-secondary hero-btn animate-in">Nuestros Servicios</a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item animate-in">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-text">Años de Experiencia</div>
+                </div>
+                <div class="stat-item animate-in">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-text">Especialidades Médicas</div>
+                </div>
+                <div class="stat-item animate-in">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">Empresas Atendidas</div>
+                </div>
+                <div class="stat-item animate-in">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-text">Satisfacción de Clientes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="nosotros" class="section about">
+        <div class="container">
+            <h2 class="section-title animate-in">Sobre Nosotros</h2>
+            <p class="section-subtitle animate-in">IPS FIGURAS SST CUCUTA SAS se ha consolidado como líder en medicina laboral e integral en la región, brindando atención especializada con los más altos estándares de calidad.</p>
+            
+            <div class="about-content">
+                <div class="about-img animate-in">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1153" alt="Nuestras instalaciones">
+                </div>
+                
+                <div class="about-text animate-in">
+                    <h3>Excelencia Médica con Enfoque Humanizado</h3>
+                    <p>En IPS FIGURAS SST CUCUTA SAS contamos con un equipo de profesionales altamente capacitados que trabajan con equipos modernos y tecnología de vanguardia para ofrecer diagnósticos precisos y tratamientos efectivos.</p>
+                    <p>Nuestro compromiso es brindar una atención médica integral con calidez y profesionalismo, cuidando la salud de sus colaboradores y garantizando el cumplimiento de las normas de seguridad laboral.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Atención Integral</h4>
+                                <p>Cuidamos de la salud de sus colaboradores en todas las especialidades médicas con un enfoque preventivo y curativo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Profesionales Certificados</h4>
+                                <p>Equipo médico con amplia experiencia y constante actualización en las últimas técnicas y tratamientos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Certificaciones</h4>
+                                <p>Cursos certificados en manipulación de alimentos y seguridad laboral para empresas de diversos sectores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="servicios" class="section services">
+        <div class="container">
+            <h2 class="section-title animate-in">Nuestros Servicios</h2>
+            <p class="section-subtitle animate-in">Ofrecemos una amplia gama de servicios médicos especializados para empresas y particulares, con énfasis en medicina laboral e integral.</p>
+            
+            <div class="services-grid">
+                <div class="service-card animate-in">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1581595219319-5cb0b5ce7b08?q=80&w=1170" alt="Medicina Laboral">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Medicina Laboral</h3>
+                        <p class="service-description">Evaluaciones médicas ocupacionales completas: exámenes preempleo, periódicos, post-ocupacionales y de retiro según normativa vigente.</p>
+                        <a href="#contacto" class="service-link">Solicitar más información <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-in">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1588614959060-4d144f28a207?q=80&w=1170" alt="Cardiología">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Cardiología</h3>
+                        <p class="service-description">Evaluación, diagnóstico y tratamiento de enfermedades cardiovasculares con equipos de última generación y personal altamente calificado.</p>
+                        <a href="#contacto" class="service-link">Solicitar más información <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-in">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1578496781985-452d4a934d50?q=80&w=1170" alt="Neurología">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Neurología</h3>
+                        <p class="service-description">Diagnóstico y tratamiento de enfermedades del sistema nervioso central y periférico con tecnología avanzada y enfoque integral.</p>
+                        <a href="#contacto" class="service-link">Solicitar más información <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Specialties Section -->
+    <section id="especialidades" class="section specialties">
+        <div class="container">
+            <h2 class="section-title animate-in">Nuestras Especialidades</h2>
+            <p class="section-subtitle animate-in">Contamos con un equipo multidisciplinario para atender todas sus necesidades de salud con tecnología de punta y profesionalismo.</p>
+            
+            <div class="specialties-grid">
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="specialty-title">Cardiología</h3>
+                    <p class="specialty-description">Evaluación cardiovascular completa, electrocardiogramas, pruebas de esfuerzo y ecocardiogramas para diagnóstico preciso.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="specialty-title">Neurología</h3>
+                    <p class="specialty-description">Diagnóstico y tratamiento de trastornos del sistema nervioso, migrañas, epilepsia y enfermedades neurodegenerativas.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h3 class="specialty-title">Radiología</h3>
+                    <p class="specialty-description">Rayos X, ecografías, densitometrías óseas y otros estudios imagenológicos con equipos de alta resolución.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="specialty-title">Psicología</h3>
+                    <p class="specialty-description">Terapia individual, familiar y ocupacional. Evaluaciones psicométricas laborales y programas de bienestar emocional.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="specialty-title">Laboratorio Clínico</h3>
+                    <p class="specialty-description">Análisis clínicos completos con tecnología de punta, resultados confiables y entrega oportuna.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="specialty-title">Odontología Integral</h3>
+                    <p class="specialty-description">Prevención, tratamiento y estética dental con equipos modernos y materiales de última generación.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-assistive-listening-systems"></i>
+                    </div>
+                    <h3 class="specialty-title">Fonoaudiología</h3>
+                    <p class="specialty-description">Evaluación y terapia del lenguaje, voz y audición para niños y adultos con enfoque personalizado.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-deaf"></i>
+                    </div>
+                    <h3 class="specialty-title">Audiometría</h3>
+                    <p class="specialty-description">Evaluación auditiva completa para diagnóstico de problemas de audición y adaptación de dispositivos.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="specialty-title">Oftalmología</h3>
+                    <p class="specialty-description">Evaluación visual completa, diagnóstico y tratamiento de enfermedades oculares con tecnología avanzada.</p>
+                </div>
+                
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="specialty-title">Manipulación de Alimentos</h3>
+                    <p class="specialty-description">Cursos certificados para empresas del sector alimentario según normativas vigentes de seguridad e higiene.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="section testimonials">
+        <div class="container">
+            <h2 class="section-title animate-in">Testimonios</h2>
+            <p class="section-subtitle animate-in">Lo que dicen nuestros pacientes y empresas aliadas sobre nuestros servicios</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-in">
+                    <p class="testimonial-content">"Excelente servicio y atención por parte de todo el equipo de IPS FIGURAS SST. Hemos confiado en ellos la salud de nuestros colaboradores por más de 5 años y siempre han demostrado profesionalismo y calidad en todos los servicios."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan Pérez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Juan Pérez</h4>
+                            <p>Gerente de RH, Empresa Constructora</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-in">
+                    <p class="testimonial-content">"Como paciente he recibido una atención cálida y profesional. Los médicos toman el tiempo necesario para explicar los diagnósticos y tratamientos. Las instalaciones son modernas, limpias y con tecnología de punta. ¡Totalmente recomendados!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="María González">
+                        </div>
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Paciente</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-in">
+                    <p class="testimonial-content">"Los cursos de manipulación de alimentos que imparten cumplen con todos los requisitos normativos. Nuestros empleados han recibido capacitación de calidad con instructores altamente calificados. Excelente servicio para empresas del sector."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Carlos Rodríguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Gerente de Calidad, Empresa Alimentaria</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Clients Section -->
+    <section class="section clients">
+        <div class="container">
+            <h2 class="section-title animate-in">Empresas que Confían en Nosotros</h2>
+            <p class="section-subtitle animate-in">Más de 500 empresas de la región nos han elegido como sus aliados en salud laboral</p>
+            
+            <div class="clients-grid">
+                <div class="client-item animate-in">
+                    <img src="https://via.placeholder.com/150x80/0056b3/ffffff?text=Empresa+A" alt="Empresa A" class="client-logo">
+                </div>
+                <div class="client-item animate-in">
+                    <img src="https://via.placeholder.com/150x80/00a859/ffffff?text=Empresa+B" alt="Empresa B" class="client-logo">
+                </div>
+                <div class="client-item animate-in">
+                    <img src="https://via.placeholder.com/150x80/ff6b00/ffffff?text=Empresa+C" alt="Empresa C" class="client-logo">
+                </div>
+                <div class="client-item animate-in">
+                    <img src="https://via.placeholder.com/150x80/1a2a49/ffffff?text=Empresa+D" alt="Empresa D" class="client-logo">
+                </div>
+                <div class="client-item animate-in">
+                    <img src="https://via.placeholder.com/150x80/0056b3/ffffff?text=Empresa+E" alt="Empresa E" class="client-logo">
+                </div>
+                <div class="client-item animate-in">
+                    <img src="https://via.placeholder.com/150x80/00a859/ffffff?text=Empresa+F" alt="Empresa F" class="client-logo">
+                </div>
+                <div class="client-item animate-in">
+                    <img src="https://via.placeholder.com/150x80/ff6b00/ffffff?text=Empresa+G" alt="Empresa G" class="client-logo">
+                </div>
+                <div class="client-item animate-in">
+                    <img src="https://via.placeholder.com/150x80/1a2a49/ffffff?text=Empresa+H" alt="Empresa H" class="client-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <h2 class="section-title animate-in">Contáctenos</h2>
+            <p class="section-subtitle animate-in">Estamos listos para atender sus necesidades de salud laboral e integral</p>
+            
+            <div class="contact-container">
+                <div class="contact-info animate-in">
+                    <h3 class="contact-title">Información de Contacto</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Dirección</h4>
+                                <p>Calle 21A #0B-122, Barrio Blanco<br>Cúcuta, Norte de Santander</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Teléfonos</h4>
+                                <p>+57 300 123 4567<br>+57 7 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>admin@trabajosenalturaipsfigurascucuta.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Horario de Atención</h4>
+                                <p>Lunes a Viernes: 7:00 am - 7:00 pm<br>Sábados: 8:00 am - 2:00 pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate-in">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Seleccione un servicio</option>
+                                <option>Medicina Laboral</option>
+                                <option>Cardiología</option>
+                                <option>Neurología</option>
+                                <option>Radiología</option>
+                                <option>Psicología</option>
+                                <option>Laboratorio Clínico</option>
+                                <option>Odontología</option>
+                                <option>Fonoaudiología</option>
+                                <option>Audiometría</option>
+                                <option>Oftalmología/Optometría</option>
+                                <option>Manipulación de Alimentos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>IPS FIGURAS SST</h3>
+                    <p>Más de 10 años brindando atención médica especializada con equipos modernos y trato humanizado en Cúcuta y Norte de Santander.</p>
+                    <div class="contact-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#servicios">Medicina Laboral</a></li>
+                        <li><a href="#servicios">Cardiología</a></li>
+                        <li><a href="#servicios">Neurología</a></li>
+                        <li><a href="#servicios">Radiología</a></li>
+                        <li><a href="#servicios">Psicología</a></li>
+                        <li><a href="#servicios">Laboratorio Clínico</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Especialidades</h3>
+                    <ul class="footer-links">
+                        <li><a href="#especialidades">Odontología Integral</a></li>
+                        <li><a href="#especialidades">Fonoaudiología</a></li>
+                        <li><a href="#especialidades">Audiometría</a></li>
+                        <li><a href="#especialidades">Oftalmología</a></li>
+                        <li><a href="#especialidades">Optometría</a></li>
+                        <li><a href="#especialidades">Manipulación de Alimentos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p>Calle 21A #0B-122, Barrio Blanco, Cúcuta</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <p>+57 300 123 4567</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p>admin@trabajosenalturaipsfigurascucuta.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 IPS FIGURAS SST CUCUTA SAS. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Tawk.to Chat Widget -->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/664a51a59a809f19fb31f92c/1hu9g6c0v';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Back to top button
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Form submission
+        const contactForm = document.querySelector('.contact-form form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simple validation
+            let isValid = true;
+            const inputs = contactForm.querySelectorAll('input, textarea, select');
+            
+            inputs.forEach(input => {
+                if (input.hasAttribute('required') && !input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = 'red';
+                } else {
+                    input.style.borderColor = '#ddd';
+                }
+            });
+            
+            if (isValid) {
+                alert('Gracias por su mensaje. Nos pondremos en contacto con usted pronto.');
+                contactForm.reset();
+            } else {
+                alert('Por favor complete todos los campos requeridos.');
+            }
+        });
+        
+        // Seasonal color change
+        function setSeasonalColors() {
+            const date = new Date();
+            const month = date.getMonth() + 1;
+            
+            // Spring: March-May
+            if (month >= 3 && month <= 5) {
+                document.documentElement.style.setProperty('--primary-color', '#10b981');
+                document.documentElement.style.setProperty('--secondary-color', '#f59e0b');
+            }
+            // Summer: June-August
+            else if (month >= 6 && month <= 8) {
+                document.documentElement.style.setProperty('--primary-color', '#f59e0b');
+                document.documentElement.style.setProperty('--secondary-color', '#ef4444');
+            }
+            // Autumn: September-November
+            else if (month >= 9 && month <= 11) {
+                document.documentElement.style.setProperty('--primary-color', '#f59e0b');
+                document.documentElement.style.setProperty('--secondary-color', '#dc2626');
+            }
+            // Winter: December-February
+            else {
+                document.documentElement.style.setProperty('--primary-color', '#1e40af');
+                document.documentElement.style.setProperty('--secondary-color', '#6366f1');
+            }
+        }
+        
+        setSeasonalColors();
+    </script>
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Cúbico 3D - IPS FIGURAS SST CÚCUTA SAS</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='white' stroke-width='7'/%3E%3Cg stroke='%2322c55e' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M50,82 V28'/%3E%3Cpath d='M50,34 C40,26 30,30 30,30'/%3E%3Cpath d='M50,34 C60,26 70,30 70,30'/%3E%3Cpath d='M60,78 C45,88 35,65 50,55 C65,45 55,22 55,22'/%3E%3Cpath d='M40,78 C55,88 65,65 50,55 C35,45 45,22 45,22'/%3E%3C/g%3E%3C/svg%3E" type="image/svg+xml">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            perspective: 1200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scene {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: sceneRotate 12s linear infinite;
+        }
+
+        .cube {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform-style: preserve-3d;
+            animation: cubeFloat 6s ease-in-out infinite;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 3px solid rgba(34, 197, 94, 0.4);
+            background: linear-gradient(135deg, 
+                rgba(37, 99, 235, 0.9), 
+                rgba(29, 78, 216, 0.8), 
+                rgba(30, 64, 175, 0.7));
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                inset 0 0 50px rgba(255, 255, 255, 0.1),
+                0 0 50px rgba(34, 197, 94, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cube-face::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, 
+                rgba(34, 197, 94, 0.2) 0%, 
+                transparent 60%);
+            animation: faceGlow 4s ease-in-out infinite alternate;
+        }
+
+        .front { transform: rotateY(0deg) translateZ(150px); }
+        .back { transform: rotateY(180deg) translateZ(150px); }
+        .right { transform: rotateY(90deg) translateZ(150px); }
+        .left { transform: rotateY(-90deg) translateZ(150px); }
+        .top { transform: rotateX(90deg) translateZ(150px); }
+        .bottom { transform: rotateX(-90deg) translateZ(150px); }
+
+        .circular-logo {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e40af);
+            box-shadow: 
+                0 0 30px rgba(37, 99, 235, 0.6),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: logoSpin 8s linear infinite;
+        }
+
+        .circular-logo::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #22c55e, #16a34a, #15803d);
+            z-index: -1;
+            animation: borderSpin 3s linear infinite;
+        }
+
+        .caduceus {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            transform-style: preserve-3d;
+        }
+
+        .staff {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100px;
+            background: linear-gradient(180deg, #fbbf24, #f59e0b, #d97706);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+        }
+
+        .wings {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+        }
+
+        .wing {
+            position: absolute;
+            width: 25px;
+            height: 18px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50% 10px 50% 10px;
+            animation: wingFlutter 1.5s ease-in-out infinite;
+        }
+
+        .wing.left {
+            left: 0;
+            transform-origin: right center;
+        }
+
+        .wing.right {
+            right: 0;
+            transform-origin: left center;
+            transform: scaleX(-1);
+        }
+
+        .snake {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+        }
+
+        .snake-body {
+            position: absolute;
+            width: 6px;
+            height: 45px;
+            background: linear-gradient(180deg, #22c55e, #16a34a, #15803d);
+            border-radius: 3px;
+            animation: snakeMove 2s ease-in-out infinite;
+        }
+
+        .snake-body.left {
+            left: 25%;
+            animation-delay: 0s;
+        }
+
+        .snake-body.right {
+            right: 25%;
+            animation-delay: -1s;
+        }
+
+        .logo-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(34, 197, 94, 0.6);
+            box-shadow: 
+                0 0 30px rgba(34, 197, 94, 0.6),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            animation: logoImageGlow 3s ease-in-out infinite alternate;
+        }
+
+        .text-display {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            line-height: 1.2;
+            z-index: 2;
+        }
+
+        .company-name {
+            transform: rotateX(0deg);
+        }
+
+        .service-text {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: particleFloat 5s ease-in-out infinite;
+        }
+
+        .ambient-light {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            right: -100px;
+            bottom: -100px;
+            background: radial-gradient(circle, 
+                rgba(34, 197, 94, 0.1) 0%, 
+                rgba(37, 99, 235, 0.05) 40%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: ambientPulse 8s ease-in-out infinite;
+        }
+
+        .control-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-size: 12px;
+            z-index: 1000;
+        }
+
+        .control-panel button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-panel button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        /* Animaciones */
+        @keyframes sceneRotate {
+            0% { transform: rotateX(10deg) rotateY(0deg); }
+            25% { transform: rotateX(20deg) rotateY(90deg); }
+            50% { transform: rotateX(10deg) rotateY(180deg); }
+            75% { transform: rotateX(0deg) rotateY(270deg); }
+            100% { transform: rotateX(10deg) rotateY(360deg); }
+        }
+
+        @keyframes cubeFloat {
+            0%, 100% { transform: translateY(0px) rotateX(0deg); }
+            50% { transform: translateY(-20px) rotateX(5deg); }
+        }
+
+        @keyframes logoSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes logoImageGlow {
+            0% { 
+                box-shadow: 
+                    0 0 30px rgba(34, 197, 94, 0.6),
+                    inset 0 0 30px rgba(255, 255, 255, 0.1);
+            }
+            100% { 
+                box-shadow: 
+                    0 0 50px rgba(34, 197, 94, 0.9),
+                    inset 0 0 50px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        @keyframes borderSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        @keyframes wingFlutter {
+            0%, 100% { transform: rotateZ(0deg); }
+            50% { transform: rotateZ(-12deg); }
+        }
+
+        @keyframes snakeMove {
+            0%, 100% { transform: translateX(0) rotateZ(0deg); }
+            25% { transform: translateX(6px) rotateZ(8deg); }
+            75% { transform: translateX(-6px) rotateZ(-8deg); }
+        }
+
+        @keyframes faceGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+
+        @keyframes particleFloat {
+            0% { 
+                opacity: 0; 
+                transform: translateY(0) scale(0); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: translateY(-300px) scale(1); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: translateY(-600px) scale(0); 
+            }
+        }
+
+        @keyframes ambientPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.6; }
+        }
+
+        .paused {
+            animation-play-state: paused !important;
+        }
+
+        .paused * {
+            animation-play-state: paused !important;
+        }
+
+        @media (max-width: 768px) {
+            .scene {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .cube {
+                width: 200px;
+                height: 200px;
+                top: 50px;
+                left: 50px;
+            }
+            
+            .cube-face {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .front { transform: rotateY(0deg) translateZ(100px); }
+            .back { transform: rotateY(180deg) translateZ(100px); }
+            .right { transform: rotateY(90deg) translateZ(100px); }
+            .left { transform: rotateY(-90deg) translateZ(100px); }
+            .top { transform: rotateX(90deg) translateZ(100px); }
+            .bottom { transform: rotateX(-90deg) translateZ(100px); }
+            
+            .circular-logo {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .logo-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .control-panel {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+            
+            .text-display {
+                font-size: 12px;
+            }
+            
+            .service-text {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light"></div>
+    
+    <div class="floating-particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 0.5s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 1.5s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 2.5s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 0.8s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 1.8s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 2.8s;"></div>
+    </div>
+    
+    <div class="scene" id="scene">
+        <div class="cube">
+            <!-- Cara frontal -->
+            <div class="cube-face front">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="company-name">IPS FIGURAS<br>SST CÚCUTA SAS</div>
+                </div>
+            </div>
+            
+            <!-- Cara trasera -->
+            <div class="cube-face back">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Seguridad y Salud<br>en el Trabajo</div>
+                </div>
+            </div>
+            
+            <!-- Cara derecha -->
+            <div class="cube-face right">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Exámenes<br>Médicos<br>Ocupacionales</div>
+                </div>
+            </div>
+            
+            <!-- Cara izquierda -->
+            <div class="cube-face left">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Capacitaciones<br>en SST</div>
+                </div>
+            </div>
+            
+            <!-- Cara superior -->
+            <div class="cube-face top">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Asesoría<br>Profesional</div>
+                </div>
+            </div>
+            
+            <!-- Cara inferior -->
+            <div class="cube-face bottom">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Cúcuta<br>Norte de Santander</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="control-panel">
+        <div>Controles:</div>
+        <button onclick="toggleAnimation()">Pausar/Reanudar</button>
+        <button onclick="resetAnimation()">Reiniciar</button>
+    </div>
+    
+    <script>
+        let isPaused = false;
+        
+        function toggleAnimation() {
+            const scene = document.getElementById('scene');
+            const body = document.body;
+            
+            if (isPaused) {
+                scene.classList.remove('paused');
+                body.classList.remove('paused');
+                isPaused = false;
+            } else {
+                scene.classList.add('paused');
+                body.classList.add('paused');
+                isPaused = true;
+            }
+        }
+        
+        function resetAnimation() {
+            const scene = document.getElementById('scene');
+            const body = document.body;
+            
+            // Remover clases de pausa
+            scene.classList.remove('paused');
+            body.classList.remove('paused');
+            
+            // Reiniciar animaciones
+            scene.style.animation = 'none';
+            setTimeout(() => {
+                scene.style.animation = 'sceneRotate 12s linear infinite';
+            }, 10);
+            
+            isPaused = false;
+        }
+        
+        // Generar partículas dinámicamente
+        function createParticles() {
+            const container = document.querySelector('.floating-particles');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = (3 + Math.random() * 4) + 's';
+                container.appendChild(particle);
+            }
+        }
+        
+        // Inicializar partículas al cargar
+        document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+</body>
+</html>

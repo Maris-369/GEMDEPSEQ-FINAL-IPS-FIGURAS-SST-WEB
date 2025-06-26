@@ -1,0 +1,80 @@
+[build]
+  command = "npm run build && npm run optimize-assets" # Nuevo script para assets pesados
+  publish = "public"
+  functions = "functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+  # Optimización para 3D y WebGL
+  GATSBY_GPU_COMPOSITE = "1"
+  WEBGL_THREADS = "4"
+  # Límites de memoria aumentados
+  NODE_OPTIONS = "--max_old_space_size=6144" # 6GB RAM
+  # Variables DICOM
+  DICOM_OPTIMIZATION = "true"
+  MAX_DICOM_SIZE = "10mb"  # Límite para archivos DICOM
+  # Variables FHIR y HL7
+  FHIR_VERSION = "R4"
+  HL7_VERSION = "2.5"
+
+# Cache hiper-agresivo para assets 3D
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
+  [plugins.inputs]
+    paths = [
+      "public/**",
+      ".cache/**",
+      "src/static/3d-models/**", # Ruta específica para assets 3D
+      "node_modules/three/**" # Cache para Three.js si lo usas
+    ]
+
+# Headers para assets pesados (CDN Edge)
+[[headers]]
+  for = "/3d-assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Encoding = "br"
+    Content-Type = "model/gltf-binary" # Ajustar según formato
+
+[[headers]]
+  for = "/textures/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Encoding = "gzip"
+    Content-Type = "image/ktx2" # Formato recomendado para WebGL
+
+[[headers]]
+  for = "/static/dicom/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+    Content-Type = "application/dicom"
+    Content-Encoding = "gzip"
+
+[[headers]]
+  for = "/api/hl7/*"
+  [headers.values]
+    Content-Type = "application/hl7-v2"
+    X-HL7-Version = "2.5"
+
+# Redirects para lazy-loading de componentes 3D
+[[redirects]]
+  from = "/load-3d-component"
+  to = "/lazy-3d.js"
+  status = 200
+  force = true
+
+[[plugins]]
+  package = "netlify-plugin-texture-compress"
+  [plugins.inputs]
+    formats = ["ktx2", "basis"]
+    quality = 90
+    inputs = "src/assets/textures/*.{png,jpg}"
+    outputs = "public/textures/"
+
+[context.production.environment]
+  PHYSICS_ENGINE = "ammo.js" # Ejemplo para simulaciones físicas
+  TEXTURE_QUALITY = "high" # "low" para móviles
+
+# Serverless function para HL7 MLLP
+[[functions]]
+  directory = "functions/hl7"

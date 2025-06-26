@@ -1,0 +1,46 @@
+name: 🛠️ 3D Model Processing
+
+on:
+  push:
+    paths:
+      - 'src/assets/3d-models/**'
+      - '.github/workflows/process-3d.yml'
+
+jobs:
+  optimize-models:
+    runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: 18
+      GLTF_OPTIMIZE_LEVEL: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 🏗️ Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Install GLTF Tools
+        run: |
+          npm install -g gltf-pipeline
+          sudo apt-get install -y draco-tools
+
+      - name: 🛠️ Process Models
+        run: |
+          find src/assets/3d-models -type f \( -name "*.glb" -o -name "*.gltf" \) | while read file; do
+            OUTPUT_FILE="${file%.*}-optimized.glb"
+            gltf-pipeline -i "$file" -o "$OUTPUT_FILE" --draco.compressionLevel=$GLTF_OPTIMIZE_LEVEL
+            if [ -f "$OUTPUT_FILE" ]; then
+              mv "$OUTPUT_FILE" "$file"
+              echo "✅ Optimized $file"
+            fi
+          done
+
+      - name: 💾 Commit Changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add src/assets/3d-models/
+          git commit -m "Optimized 3D models [skip ci]" || echo "No changes to commit"
+          git push

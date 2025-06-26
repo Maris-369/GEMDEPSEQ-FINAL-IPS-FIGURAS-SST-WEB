@@ -1,0 +1,136 @@
+
+/* QRPatient.css */
+.qr-patient-container {
+  margin: 20px 0;
+}
+
+.print-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: var(--background-color, #ffffff);
+  border: 2px solid var(--border-color, #e0e0e0);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.print-qr:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.print-qr svg {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: white;
+  padding: 8px;
+}
+
+.qr-info {
+  text-align: center;
+  width: 100%;
+}
+
+.qr-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color, #2c5aa0);
+  margin: 0 0 8px 0;
+}
+
+.qr-url {
+  font-size: 12px;
+  color: var(--text-secondary, #666);
+  margin: 0 0 8px 0;
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+}
+
+.company-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-color, #2c5aa0);
+  margin: 8px 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Tema oscuro */
+[data-theme="dark"] .print-qr {
+  background: var(--dark-background, #1a1a1a);
+  border-color: var(--dark-border, #333);
+  color: var(--dark-text, #ffffff);
+}
+
+[data-theme="dark"] .qr-label,
+[data-theme="dark"] .company-name {
+  color: var(--dark-primary, #4a90ff);
+}
+
+[data-theme="dark"] .qr-url {
+  color: var(--dark-text-secondary, #ccc);
+}
+
+/* Estilos para impresión */
+@media print {
+  .print-qr {
+    border: 1px solid #000;
+    box-shadow: none;
+    background: white !important;
+    color: black !important;
+    page-break-inside: avoid;
+    margin: 10px 0;
+    padding: 15px;
+  }
+  
+  .print-qr svg {
+    background: white !important;
+  }
+  
+  .qr-label,
+  .company-name {
+    color: black !important;
+  }
+  
+  .qr-url {
+    color: #333 !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .print-qr {
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  .qr-label {
+    font-size: 14px;
+  }
+  
+  .qr-url {
+    font-size: 11px;
+  }
+  
+  .company-name {
+    font-size: 12px;
+  }
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.qr-patient-container {
+  animation: fadeInUp 0.5s ease-out;
+}

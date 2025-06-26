@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Cúbico 3D - IPS FIGURAS SST CÚCUTA SAS</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='white' stroke-width='7'/%3E%3Cg stroke='%2322c55e' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M50,82 V28'/%3E%3Cpath d='M50,34 C40,26 30,30 30,30'/%3E%3Cpath d='M50,34 C60,26 70,30 70,30'/%3E%3Cpath d='M60,78 C45,88 35,65 50,55 C65,45 55,22 55,22'/%3E%3Cpath d='M40,78 C55,88 65,65 50,55 C35,45 45,22 45,22'/%3E%3C/g%3E%3C/svg%3E" type="image/svg+xml">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            perspective: 1200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .scene {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: sceneRotate 12s linear infinite;
+        }
+        .cube {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform-style: preserve-3d;
+            animation: cubeFloat 6s ease-in-out infinite;
+        }
+        .cube-face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 3px solid rgba(34, 197, 94, 0.4);
+            background: linear-gradient(135deg, 
+                rgba(37, 99, 235, 0.9), 
+                rgba(29, 78, 216, 0.8), 
+                rgba(30, 64, 175, 0.7));
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                inset 0 0 50px rgba(255, 255, 255, 0.1),
+                0 0 50px rgba(34, 197, 94, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .cube-face::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, 
+                rgba(34, 197, 94, 0.2) 0%, 
+                transparent 60%);
+            animation: faceGlow 4s ease-in-out infinite alternate;
+        }
+        .front { transform: rotateY(0deg) translateZ(150px); }
+        .back { transform: rotateY(180deg) translateZ(150px); }
+        .right { transform: rotateY(90deg) translateZ(150px); }
+        .left { transform: rotateY(-90deg) translateZ(150px); }
+        .top { transform: rotateX(90deg) translateZ(150px); }
+        .bottom { transform: rotateX(-90deg) translateZ(150px); }
+        .circular-logo {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e40af);
+            box-shadow: 
+                0 0 30px rgba(37, 99, 235, 0.6),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: logoSpin 8s linear infinite;
+        }
+        .circular-logo::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #22c55e, #16a34a, #15803d);
+            z-index: -1;
+            animation: borderSpin 3s linear infinite;
+        }
+        .caduceus {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            transform-style: preserve-3d;
+        }
+        .staff {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100px;
+            background: linear-gradient(180deg, #fbbf24, #f59e0b, #d97706);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+        }
+        .wings {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+        }
+        .wing {
+            position: absolute;
+            width: 25px;
+            height: 18px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50% 10px 50% 10px;
+            animation: wingFlutter 1.5s ease-in-out infinite;
+        }
+        .wing.left {
+            left: 0;
+            transform-origin: right center;
+        }
+        .wing.right {
+            right: 0;
+            transform-origin: left center;
+            transform: scaleX(-1);
+        }
+        .snake {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+        }
+        .snake-body {
+            position: absolute;
+            width: 6px;
+            height: 45px;
+            background: linear-gradient(180deg, #22c55e, #16a34a, #15803d);
+            border-radius: 3px;
+            animation: snakeMove 2s ease-in-out infinite;
+        }
+        .snake-body.left {
+            left: 25%;
+            animation-delay: 0s;
+        }
+        .snake-body.right {
+            right: 25%;
+            animation-delay: -1s;
+        }
+        .logo-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(34, 197, 94, 0.6);
+            box-shadow: 
+                0 0 30px rgba(34, 197, 94, 0.6),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            animation: logoImageGlow 3s ease-in-out infinite alternate;
+        }
+        .text-display {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            line-height: 1.2;
+        }
+        .company-name {
+            transform: rotateX(0deg);
+        }
+        .service-text {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: particleFloat 5s ease-in-out infinite;
+        }
+        .ambient-light {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            right: -100px;
+            bottom: -100px;
+            background: radial-gradient(circle, 
+                rgba(34, 197, 94, 0.1) 0%, 
+                rgba(37, 99, 235, 0.05) 40%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: ambientPulse 8s ease-in-out infinite;
+        }
+        .control-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-size: 12px;
+        }
+        .control-panel button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .control-panel button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+        /* Animaciones */
+        @keyframes sceneRotate {
+            0% { transform: rotateX(10deg) rotateY(0deg); }
+            25% { transform: rotateX(20deg) rotateY(90deg); }
+            50% { transform: rotateX(10deg) rotateY(180deg); }
+            75% { transform: rotateX(0deg) rotateY(270deg); }
+            100% { transform: rotateX(10deg) rotateY(360deg); }
+        }
+        @keyframes cubeFloat {
+            0%, 100% { transform: translateY(0px) rotateX(0deg); }
+            50% { transform: translateY(-20px) rotateX(5deg); }
+        }
+        @keyframes logoSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes logoImageGlow {
+            0% { 
+                box-shadow: 
+                    0 0 30px rgba(34, 197, 94, 0.6),
+                    inset 0 0 30px rgba(255, 255, 255, 0.1);
+            }
+            100% { 
+                box-shadow: 
+                    0 0 50px rgba(34, 197, 94, 0.9),
+                    inset 0 0 50px rgba(255, 255, 255, 0.2);
+            }
+        }
+        @keyframes borderSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        @keyframes wingFlutter {
+            0%, 100% { transform: rotateZ(0deg); }
+            50% { transform: rotateZ(-12deg); }
+        }
+        @keyframes snakeMove {
+            0%, 100% { transform: translateX(0) rotateZ(0deg); }
+            25% { transform: translateX(6px) rotateZ(8deg); }
+            75% { transform: translateX(-6px) rotateZ(-8deg); }
+        }
+        @keyframes faceGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+        @keyframes particleFloat {
+            0% { 
+                opacity: 0; 
+                transform: translateY(0) scale(0); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: translateY(-300px) scale(1); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: translateY(-600px) scale(0); 
+            }
+        }
+        @keyframes ambientPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.6; }
+        }
+        .paused {
+            animation-play-state: paused !important;
+        }
+        @media (max-width: 768px) {
+            .scene {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .cube {
+                width: 200px;
+                height: 200px;
+                top: 50px;
+                left: 50px;
+            }
+            
+            .cube-face {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .circular-logo {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .logo-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .control-panel {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light"></div>
+    
+    <div class="scene" id="scene">
+        <div class="cube" id="cube">
+            <div class="cube-face front">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face back">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMjI4QjIyIi8+CjxlbGxpcHNlIGN4PSIyNTAiIGN5PSIxNTAiIHJ4PSIxMzUiIHJ5PSI2NSIgc3Ryb2tlPSIjOERDQzk5IiBzdHJva2Utd2lkdGg9IjgiIGZpbGw9Im5vbmUiLz4KPGVsbGlwc2UgY3g9IjI1MCIgY3k9IjE1MCIgcng9IjEzNSIgcnk9IjY1IiBzdHJva2U9IiM4RENDOTkiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgdHJhbnNmb3JtPSJyb3RhdGUoNjAgMjUwIDE1MCkiLz4KPGVsbGlwc2UgY3g9IjI1MCIgY3k9IjE1MCIgcng9IjEzNSIgcnk9IjY1IiBzdHJva2U9IiM4RENDOTkiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTYwIDI1MCAxNTApIi8+CjxwYXRoIGQ9Ik0yNTAgNzVMMjUwIDIwNSIgc3Ryb2tlPSIjRkVEQjQxIiBzdHJva2Utd2lkdGg9IjYiLz4KPHBhdGggZD0iTTI0MyA4NUMyMzMgNzUgMjE4IDc4IDIxOCA3OCIgc3Ryb2tlPSIjRkVEQjQxIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTI1NyA4NUMyNjcgNzUgMjgyIDc4IDI4MiA3OCIgc3Ryb2tlPSIjRkVEQjQxIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTI2NSAxOTVDMjUwIDIwNSAyMzUgMTg1IDI1MCAxNzVDMjY1IDE2NSAyNTUgMTQ1IDI1NSAxNDUiIHN0cm9rZT0iI0ZFREI0MSIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIi8+CjxwYXRoIGQ9Ik0yMzUgMTk1QzI1MCAyMDUgMjY1IDE4NSAyNTAgMTc1QzIzNSAxNjUgMjQ1IDE0NSAyNDUgMTQ1IiBzdHJva2U9IiNGRURCNDEiIHN0cm9rZS13aWR0aD0iNSIgZmlsbD0ibm9uZSIvPgo8cGF0aCBkPSJNMjMwIDExNUwyNzAgMTE1IiBzdHJva2U9IiNGRURCNDEiIHN0cm9rZS13aWR0aD0iNCIvPgo8cGF0aCBkPSJNMjIwIDEyNUwyODAgMTI1IiBzdHJva2U9IiNGRURCNDEiIHN0cm9rZS13aWR0aD0iMyIvPgo8cGF0aCBkPSJNMjEwIDEzNUwyOTAgMTM1IiBzdHJva2U9IiNGRURCNDEiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCB4PSIyNTAiIHk9IjI4MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQ4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RklHVVJBUyBTU1Q8L3RleHQ+Cjx0ZXh0IHg9IjI1MCIgeT0iMzMwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DVUNVVEEgSVBTPC90ZXh0Pgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTUgMzgwKSI+CjxyZWN0IHdpZHRoPSI3MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI0ZFREI0MSIgcng9IjEwIi8+CjxyZWN0IHg9IjEwIiB5PSIxMCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjRkJCRjI0IiByeD0iNSIvPgo8Y2lyY2xlIGN4PSIzNSIgY3k9IjI1IiByPSI4IiBmaWxsPSIjRkVEQjQxIi8+CjxyZWN0IHg9IjI4IiB5PSIzNSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjMwIiBmaWxsPSIjRkJCRjI0IiByeD0iMiIvPgo8Y2lyY2xlIGN4PSI1NSIgY3k9IjY1IiByPSI4IiBmaWxsPSIjMjJDNTVFIi8+CjxwYXRoIGQ9Ik01NCA2MEw1NiA2Nkw2MCA2NEw1NCA2MFoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPC9zdmc+" alt="Logo FIGURAS SST CUCUTA IPS" class="logo-image">
+            </div>
+            <div class="cube-face right">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🏥</div>
+                        <div style="font-size: 12px;">SERVICIOS</div>
+                        <div style="font-size: 12px;">MÉDICOS</div>
+                        <div style="font-size: 12px;">ESPECIALIZADOS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face left">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🛡️</div>
+                        <div style="font-size: 12px;">SEGURIDAD</div>
+                        <div style="font-size: 12px;">Y SALUD</div>
+                        <div style="font-size: 12px;">OCUPACIONAL</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face top">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🌍</div>
+                        <div style="font-size: 12px;">CÚCUTA</div>
+                        <div style="font-size: 12px;">NORTE DE</div>
+                        <div style="font-size: 12px;">SANTANDER</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face bottom">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">⚕️</div>
+                        <div style="font-size: 12px;">EXCELENCIA</div>
+                        <div style="font-size: 12px;">EN</div>
+                        <div style="font-size: 12px;">SALUD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="control-panel">
+        <div style="margin-bottom: 10px; font-weight: bold;">Controles</div>
+        <button onclick="toggleAnimation()">⏸️ Pausar/Reanudar</button>
+        <button onclick="speedUp()">⚡ Acelerar</button>
+        <button onclick="slowDown()">🐌 Ralentizar</button>
+        <button onclick="resetView()">🔄 Reiniciar</button>
+    </div>
+
+    <script>
+        let animationSpeed = 1;
+        let isPaused = false;
+
+        // Crear partículas flotantes
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 25;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${4 + Math.random() * 3}s`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Controles de animación
+        function toggleAnimation() {
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            if (isPaused) {
+                scene.classList.remove('paused');
+                cube.classList.remove('paused');
+                document.querySelectorAll('.circular-logo, .wing, .snake-body').forEach(el => {
+                    el.classList.remove('paused');
+                });
+                isPaused = false;
+            } else {
+                scene.classList.add('paused');
+                cube.classList.add('paused');
+                document.querySelectorAll('.circular-logo, .wing, .snake-body').forEach(el => {
+                    el.classList.add('paused');
+                });
+                isPaused = true;
+            }
+        }
+
+        function speedUp() {
+            animationSpeed = Math.min(animationSpeed * 1.5, 4);
+            updateAnimationSpeed();
+        }
+
+        function slowDown() {
+            animationSpeed = Math.max(animationSpeed / 1.5, 0.25);
+            updateAnimationSpeed();
+        }
+
+        function updateAnimationSpeed() {
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            scene.style.animationDuration = `${12 / animationSpeed}s`;
+            cube.style.animationDuration = `${6 / animationSpeed}s`;
+            
+            document.querySelectorAll('.circular-logo').forEach(el => {
+                el.style.animationDuration = `${8 / animationSpeed}s`;
+            });
+        }
+
+        function resetView() {
+            animationSpeed = 1;
+            isPaused = false;
+            
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            scene.classList.remove('paused');
+            cube.classList.remove('paused');
+            
+            updateAnimationSpeed();
+        }
+
+        // Efectos de hover
+        document.getElementById('cube').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1) rotateX(15deg) rotateY(15deg)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+
+        document.getElementById('cube').addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.transition = 'transform 0.3s ease';
+        });
+
+        // Controles de teclado
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    toggleAnimation();
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    speedUp();
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    slowDown();
+                    break;
+                case 'r':
+                case 'R':
+                    resetView();
+                    break;
+            }
+        });
+
+        // Inicialización
+        createParticles();
+
+        // Recrear partículas periódicamente
+        setInterval(() => {
+            if (document.querySelectorAll('.particle').length < 30) {
+                createParticles();
+            }
+        }, 5000);
+
+// Efecto de paralaje con el mouse
+document.addEventListener('mousemove', function(e) {
+    if (!isPaused) {
+        const scene = document.getElementById('scene');
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        
+        const rotateX = (e.clientY - centerY) / 50;
+        const rotateY = (e.clientX - centerX) / 50;
+
+        scene.style.transform = `rotateX(${10 + rotateX}deg) rotateY(${rotateY}deg)`;
+    }
+});
+</script>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#inicio" class="logo">
+                <img src="logo.jpg" alt="Logo IPS FIGURAS SST" class="logo-img">
+                <div class="logo-text">
+                    <h1>FIGURAS SST</h1>
+                    <p>IPS Medicina Laboral</p>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#ai-assistant">Asistente IA</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#video-gallery">Videos</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="logo-3d-container">
+            <div class="logo-3d">
+              <div class="logo-face front"></div> <div class="logo-face back"></div>
+              <div class="logo-face right"></div> <div class="logo-face left"></div>
+              <div class="logo-face top"></div> <div class="logo-face bottom"></div>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="hero-title animate-in">Medicina Laboral e Integral</h1>
+            <p class="hero-subtitle animate-in">Potenciada con Inteligencia Artificial para un mejor servicio.</p>
+            <div class="hero-btns">
+                <a href="#contacto" class="btn btn-primary hero-btn animate-in">Solicitar Cita</a>
+                <a href="#ai-assistant" class="btn btn-secondary hero-btn animate-in">✨ Probar Asistente IA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Health Assistant Section -->
+    <section id="ai-assistant" class="section">
+        <div class="container">
+            <h2 class="section-title animate-in">Asistente de Salud Virtual ✨</h2>
+            <p class="section-subtitle animate-in">¿No estás seguro de qué especialista necesitas? Describe tus síntomas y nuestra IA te guiará.</p>
+            <div class="ai-assistant-container animate-in">
+                <textarea id="symptoms-input" class="form-control" placeholder="Ej: 'He tenido un dolor de cabeza constante y visión borrosa durante los últimos 3 días...'"></textarea>
+                <button id="analyze-symptoms-btn" class="btn btn-primary">Analizar Síntomas</button>
+                <div id="ai-symptoms-spinner" class="loading-spinner"></div>
+                <div id="ai-symptoms-result" class="ai-result" style="display: none;"></div>
+                <p class="ai-disclaimer"><strong>Descargo de responsabilidad:</strong> Este asistente es una herramienta de orientación y no proporciona un diagnóstico médico. La información generada por IA puede no ser precisa. Consulta siempre a un profesional de la salud calificado para cualquier problema médico.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section with Video -->
+    <section id="nosotros" class="section about">
+        <div class="container">
+            <h2 class="section-title animate-in">Sobre Nosotros</h2>
+            <p class="section-subtitle animate-in">IPS FIGURAS SST CUCUTA SAS se ha consolidado como líder en medicina laboral e integral en la región, brindando atención especializada con los más altos estándares de calidad.</p>
+            <div class="about-content">
+                <div class="about-text animate-in">
+                    <h3>Excelencia Médica con Enfoque Humanizado</h3>
+                    <p>En IPS FIGURAS SST CUCUTA SAS contamos con un equipo de profesionales altamente capacitados que trabajan con equipos modernos y tecnología de vanguardia para ofrecer diagnósticos precisos y tratamientos efectivos.</p>
+                    <p>Nuestro compromiso es brindar una atención médica integral con calidez y profesionalismo, cuidando la salud de sus colaboradores y garantizando el cumplimiento de las normas de seguridad laboral.</p>
+                </div>
+                <div class="video-wrapper animate-in">
+                    <img src="health-8168788_1280.jpg EQUIPO MEDICO.jpg" alt="Equipo Médico">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="servicios" class="section services">
+        <div class="container">
+            <h2 class="section-title animate-in">Nuestros Servicios</h2>
+            <p class="section-subtitle animate-in">Ofrecemos una amplia gama de servicios médicos especializados para empresas y particulares, con énfasis en medicina laboral e integral.</p>
+            <div class="services-grid">
+                <div class="service-card animate-in">
+                    <div class="service-img">
+                        <img src="engineer-4925135_640.jpg.medicina-laboral.jpg" alt="Medicina Laboral" onerror="this.onerror=null;this.src='https://placehold.co/400x220/0056b3/ffffff?text=Medicina+Laboral';">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Medicina Laboral</h3>
+                        <p class="service-description">Evaluaciones médicas ocupacionales completas: exámenes preempleo, periódicos, post-ocupacionales y de retiro según normativa vigente.</p>
+                        <a href="#contacto" class="service-link">Solicitar más información <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card animate-in">
+                    <div class="service-img">
+                        <img src=".cardiologia.jpg" alt="Cardiología" onerror="this.onerror=null;this.src='https://placehold.co/400x220/ff6b00/ffffff?text=Cardiología';">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Cardiología</h3>
+                        <p class="service-description">Diagnóstico y tratamiento de enfermedades cardiovasculares, con electrocardiogramas, pruebas de esfuerzo y más.</p>
+                        <a href="#contacto" class="service-link">Solicitar más información <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card animate-in">
+                    <div class="service-img">
+                        <img src="orthodontist-287285_640.jpg.odontologia.jpg" alt="Odontología" onerror="this.onerror=null;this.src='https://placehold.co/400x220/00a859/ffffff?text=Odontología';">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Odontología Integral</h3>
+                        <p class="service-description">Servicios de prevención, tratamiento y estética dental con equipos modernos para garantizar la mejor salud bucal.</p>
+                        <a href="#contacto" class="service-link">Solicitar más información <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Gallery Section -->
+    <section id="video-gallery" class="section">
+        <div class="container">
+            <h2 class="section-title animate-in">Galería de Videos</h2>
+            <p class="section-subtitle animate-in">Descubre más sobre salud, bienestar y nuestros servicios a través de nuestros videos informativos.</p>
+            <div class="video-grid">
+                <div class="video-wrapper animate-in"><iframe src="https://www.youtube.com/embed/AP6mhNutweg?si=bUqOEwrtYFaPsI0-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <div class="video-wrapper animate-in"><iframe src="https://www.youtube.com/embed/xq-2KC19w88?si=y15AiVIwyxGfRZea" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <div class="video-wrapper animate-in"><iframe src="https://www.youtube.com/embed/XL_5aFMRAK8?si=AG27O8buEi-fkogM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <div class="video-wrapper animate-in"><iframe src="https://www.youtube.com/embed/vO6GjC8macI?si=ws-16wv-zJI8Dxiz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <div class="video-wrapper animate-in"><iframe src="https://www.youtube.com/embed/4V05o45Zxh4?si=TCzX_vmbVkInI0Rs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <div class="video-wrapper animate-in"><iframe src="https://www.youtube.com/embed/wBE_DNNJruw?si=AFkmgUTaSsdze2y0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section id="especialidades" class="section specialties">
+        <div class="container">
+            <h2 class="section-title animate-in">Nuestras Especialidades</h2>
+            <p class="section-subtitle animate-in">Contamos con un equipo multidisciplinario para atender todas sus necesidades de salud. Use nuestro asistente de IA para resolver sus dudas.</p>
+            
+            <div class="specialties-grid">
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3 class="specialty-title">Cardiología</h3>
+                    <p class="specialty-description">Evaluación cardiovascular completa, electrocardiogramas, pruebas de esfuerzo y ecocardiogramas.</p>
+                    <button class="btn btn-secondary ai-specialist-btn">✨ Preguntar al Asistente</button>
+                </div>
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                         <img src="support-service-1120755_640.jpg.psicologia.jpg" alt="Psicología">
+                    </div>
+                    <h3 class="specialty-title">Psicología</h3>
+                    <p class="specialty-description">Terapia individual, familiar y ocupacional. Evaluaciones psicométricas y programas de bienestar emocional.</p>
+                    <button class="btn btn-secondary ai-specialist-btn">✨ Preguntar al Asistente</button>
+                </div>
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <img src="scientist-2141259_640.jpg.laboratorio-clinico.jpg" alt="Laboratorio Clínico">
+                    </div>
+                    <h3 class="specialty-title">Laboratorio Clínico</h3>
+                    <p class="specialty-description">Análisis clínicos completos con tecnología de punta, resultados confiables y entrega oportuna.</p>
+                    <button class="btn btn-secondary ai-specialist-btn">✨ Preguntar al Asistente</button>
+                </div>
+                <div class="specialty-card animate-in">
+                    <div class="specialty-icon">
+                        <img src="orthodontist-287285_640.jpg.odontologia.jpg" alt="Odontología">
+                    </div>
+                    <h3 class="specialty-title">Odontología Integral</h3>
+                    <p class="specialty-description">Prevención, tratamiento y estética dental con equipos modernos y materiales de última generación.</p>
+                    <button class="btn btn-secondary ai-specialist-btn">✨ Preguntar al Asistente</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Testimonials Section -->
+    <section id="testimonios" class="section testimonials">
+        <div class="container">
+            <h2 class="section-title animate-in">Testimonios de Nuestros Clientes</h2>
+            <p class="section-subtitle animate-in">La satisfacción de nuestros pacientes y empresas aliadas es nuestra mayor prioridad.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-in">
+                    <p class="testimonial-content">"El profesionalismo y la calidad humana del equipo de IPS FIGURAS SST son inigualables. Se preocupan genuinamente por nuestra salud y bienestar."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="young-woman-1076995_640.jpg.testimonio-administrativa.jpg" alt="Testimonio Administrativa">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana María Rojas</h4>
+                            <p>Coordinadora Administrativa</p>
+                            <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-in">
+                    <p class="testimonial-content">"Gracias a sus rigurosos exámenes de aptitud, hemos reducido los accidentes laborales. Son un aliado estratégico para la seguridad de nuestro equipo."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="man-8325397_640.jpg.testimonio-tecnico.jpg" alt="Testimonio Técnico">
+                        </div>
+                        <div class="author-info">
+                            <h4>Javier Mendoza</h4>
+                            <p>Técnico de Campo</p>
+                            <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-in">
+                    <p class="testimonial-content">"Siempre nos atienden con una sonrisa y se aseguran de que entendamos cada procedimiento. ¡Un servicio excepcional y muy humano!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                           <img src="sanitation-worker-7082177_640.jpg.testimonio-operario.jpg" alt="Testimonio Operario">
+                        </div>
+                        <div class="author-info">
+                            <h4>Luis Carlos Parra</h4>
+                            <p>Operario de Mantenimiento</p>
+                            <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-in">
+                    <p class="testimonial-content">"Como ingeniera, la salud ocupacional es clave. En IPS FIGURAS SST he encontrado el mejor aliado para mis proyectos. ¡Totalmente recomendados!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                           <img src="engineer-4941163_640.jpg.testimonio-ingeniera.jpg" alt="Testimonio Ingeniera">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carolina Giraldo</h4>
+                            <p>Ingeniera de Proyectos</p>
+                            <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info animate-in">
+                    <h2 class="section-title">Contáctenos</h2>
+                    <p class="section-subtitle">Estamos listos para atender sus necesidades de salud laboral e integral</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text"><h4>Dirección</h4><p>Calle 21A #0B-122, Barrio Blanco<br>Cúcuta, Norte de Santander</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="contact-text"><h4>Teléfonos</h4><p>+57 3138914384<br>+57 3158525385</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text"><h4>Email</h4><p>admin@trabajosenalturaipsfigurascucuta.com</p></div>
+                        </div>
+                         <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div class="contact-text"><h4>Horario de Atención</h4><p>Lunes a Viernes: 6:00 AM - 6:00 PM<br>Sábados: 6:00 AM - 1:00 PM</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form animate-in">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="main-contact-form">
+                        <div class="form-group"><input type="text" class="form-control" placeholder="Nombre completo" required></div>
+                        <div class="form-group"><input type="email" class="form-control" placeholder="Correo electrónico" required></div>
+                        <div class="form-group"><input type="tel" class="form-control" placeholder="Teléfono"></div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Seleccione un servicio...</option>
+                                <option>Medicina Laboral</option> <option>Cardiología</option> <option>Neurología</option>
+                                <option>Radiología</option> <option>Psicología</option> <option>Laboratorio Clínico</option>
+                                <option>Odontología</option> <option>Fonoaudiología</option> <option>Audiometría</option>
+                                <option>Oftalmología/Optometría</option> <option>Manipulación de Alimentos</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><textarea class="form-control" placeholder="Mensaje" required></textarea></div>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                    <div id="form-status" class="form-status"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col footer-about"><h3>IPS FIGURAS SST CUCUTA SAS</h3><p>Más de 10 años brindando atención médica especializada con equipos modernos y trato humanizado en Cúcuta y Norte de Santander.</p></div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio"><i class="fas fa-angle-right"></i>Inicio</a></li>
+                        <li><a href="#servicios"><i class="fas fa-angle-right"></i>Servicios</a></li>
+                        <li><a href="#nosotros"><i class="fas fa-angle-right"></i>Nosotros</a></li>
+                        <li><a href="#contacto"><i class="fas fa-angle-right"></i>Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Especialidades</h3>
+                    <ul class="footer-links">
+                         <li><a href="#especialidades"><i class="fas fa-angle-right"></i>Odontología</a></li>
+                         <li><a href="#especialidades"><i class="fas fa-angle-right"></i>Fonoaudiología</a></li>
+                         <li><a href="#especialidades"><i class="fas fa-angle-right"></i>Audiometría</a></li>
+                         <li><a href="#especialidades"><i class="fas fa-angle-right"></i>Oftalmología</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact-item"><div class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></div><p>Calle 21A #0B-122, Barrio Blanco, Cúcuta</p></div>
+                    <div class="footer-contact-item"><div class="footer-contact-icon"><i class="fas fa-phone-alt"></i></div><p>+57 3138914384</p></div>
+                    <div class="footer-contact-item"><div class="footer-contact-icon"><i class="fas fa-envelope"></i></div><p>admin@trabajosenalturaipsfigurascucuta.com</p></div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 IPS FIGURAS SST CUCUTA SAS. Todos los derechos reservados.</p></div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#inicio" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- AI Specialist Modal -->
+    <div id="ai-specialist-modal" class="ai-modal">
+        <div class="ai-modal-content">
+            <button id="ai-modal-close-btn" class="ai-modal-close"><i class="fas fa-times"></i></button>
+            <h3 id="ai-modal-title">Preguntar al Asistente de IA</h3>
+            <div class="form-group">
+                <input type="text" id="ai-modal-question" class="form-control" placeholder="Escribe tu pregunta general aquí...">
+            </div>
+            <button id="ai-modal-submit" class="btn btn-primary">Enviar Pregunta</button>
+            <div id="ai-modal-spinner" class="loading-spinner"></div>
+            <div id="ai-modal-result" class="ai-result" style="display:none;"></div>
+             <p class="ai-disclaimer" style="font-size: 0.8rem; margin-top: 15px;"><strong>Nota:</strong> Esta es una herramienta informativa. No ingrese datos personales y consulte siempre a un médico para obtener consejos de salud.</p>
+        </div>
+    </div>
+    
+    <!-- Tawk.to Chat Widget -->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true; s1.src='https://embed.tawk.to/6782005649e2fd8dfe05e884/d4f6d6394e1ae9fc6f9e92ea0cf47b2c7d575c05',
+            s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const apiKey = ""; // Leave empty, will be handled by the environment
+
+            // --- Gemini API Call Function ---
+            async function callGemini(prompt, resultElement, spinnerElement) {
+                spinnerElement.style.display = 'block';
+                resultElement.style.display = 'none';
+                resultElement.innerHTML = '';
+
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Error en la API: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates[0] && result.candidates[0].content && result.candidates[0].content.parts[0]) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        resultElement.innerHTML = simpleMarkdownToHtml(text);
+                    } else {
+                        throw new Error("Respuesta inesperada de la API.");
+                    }
+                } catch (error) {
+                    console.error("Error al llamar a la API de Gemini:", error);
+                    resultElement.innerHTML = `<p style="color: red;">Lo sentimos, ocurrió un error al procesar tu solicitud. Por favor, intenta de nuevo más tarde.</p>`;
+                } finally {
+                    spinnerElement.style.display = 'none';
+                    resultElement.style.display = 'block';
+                }
+            }
+            
+            function simpleMarkdownToHtml(text) {
+                return text
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')       // Italics
+                    .replace(/^- (.*$)/mg, '<li>$1</li>')       // List items
+                    .replace(/(\n<li>.*<\/li>)/g, '<ul>$1</ul>') // Wrap lists
+                    .replace(/\n/g, '<br>');                      // Newlines
+            }
+
+            // --- AI Symptom Analyzer Logic ---
+            const analyzeBtn = document.getElementById('analyze-symptoms-btn');
+            const symptomsInput = document.getElementById('symptoms-input');
+            const symptomsResult = document.getElementById('ai-symptoms-result');
+            const symptomsSpinner = document.getElementById('ai-symptoms-spinner');
+
+            analyzeBtn.addEventListener('click', () => {
+                const symptoms = symptomsInput.value;
+                if (symptoms.trim().length < 10) {
+                    symptomsResult.innerHTML = `<p style="color: orange;">Por favor, describe tus síntomas con más detalle para obtener una mejor orientación.</p>`;
+                    symptomsResult.style.display = 'block';
+                    return;
+                }
+                const prompt = `Basado en los siguientes síntomas: "${symptoms}", ¿cuáles son las posibles especialidades médicas que una persona debería considerar consultar y qué tipo de preguntas clave podría hacerle al doctor? Proporciona la respuesta en formato Markdown, clara y fácil de entender. No ofrezcas un diagnóstico. Comienza con un encabezado de 'Orientación Sugerida'.`;
+                callGemini(prompt, symptomsResult, symptomsSpinner);
+            });
+
+            // --- AI Specialist Modal Logic ---
+            const modal = document.getElementById('ai-specialist-modal');
+            const modalCloseBtn = document.getElementById('ai-modal-close-btn');
+            const modalSubmitBtn = document.getElementById('ai-modal-submit');
+            const modalQuestionInput = document.getElementById('ai-modal-question');
+            const modalTitle = document.getElementById('ai-modal-title');
+            const modalResult = document.getElementById('ai-modal-result');
+            const modalSpinner = document.getElementById('ai-modal-spinner');
+            let currentSpecialty = '';
+            
+            document.querySelectorAll('.ai-specialist-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const card = e.target.closest('.specialty-card');
+                    currentSpecialty = card.querySelector('.specialty-title').textContent;
+                    modalTitle.textContent = `Asistente de IA - ${currentSpecialty}`;
+                    modalQuestionInput.value = '';
+                    modalResult.style.display = 'none';
+                    modal.classList.add('visible');
+                });
+            });
+
+            modalCloseBtn.addEventListener('click', () => modal.classList.remove('visible'));
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('visible');
+                }
+            });
+
+            modalSubmitBtn.addEventListener('click', () => {
+                const question = modalQuestionInput.value;
+                if (question.trim().length < 5) {
+                    modalResult.innerHTML = `<p style="color: orange;">Por favor, escribe una pregunta.</p>`;
+                    modalResult.style.display = 'block';
+                    return;
+                }
+                const prompt = `Como asistente de IA experto en ${currentSpecialty}, responde la siguiente pregunta de forma general e informativa. No des consejos médicos personalizados ni diagnósticos. La pregunta es: "${question}"`;
+                callGemini(prompt, modalResult, modalSpinner);
+            });
+
+            // --- Existing JS (Mobile Menu, Scroll, etc.) ---
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+
+            const navbar = document.querySelector('.navbar');
+            const backToTopBtn = document.querySelector('.back-to-top');
+            const sections = document.querySelectorAll('section');
+            const navLi = document.querySelectorAll('.nav-links li a');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+                if (window.scrollY > 300) backToTopBtn.classList.add('active');
+                else backToTopBtn.classList.remove('active');
+                let current = '';
+                sections.forEach(section => {
+                    if (pageYOffset >= section.offsetTop - 100) current = section.getAttribute('id');
+                });
+                navLi.forEach(a => {
+                    a.classList.remove('active');
+                    if(a.getAttribute('href') == `#${current}`) a.classList.add('active');
+                });
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.length > 1) {
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                        }
+                    } else if (targetId === '#') {
+                        e.preventDefault();
+                    }
+                });
+            });
+            
+            const animateOnScroll = () => {
+                document.querySelectorAll('.animate-in').forEach(element => {
+                    if (element.getBoundingClientRect().top < window.innerHeight - 100) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+
+            const contactForm = document.getElementById('main-contact-form');
+            const formStatus = document.getElementById('form-status');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+                const inputs = contactForm.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                    if (input.hasAttribute('required') && !input.value.trim()) {
+                        isValid = false;
+                        input.style.borderColor = 'red';
+                    } else {
+                        input.style.borderColor = '#ddd';
+                    }
+                });
+                formStatus.innerHTML = '';
+                formStatus.className = 'form-status';
+                if (isValid) {
+                    formStatus.textContent = 'Gracias por su mensaje. Nos pondremos en contacto con usted pronto.';
+                    formStatus.classList.add('success');
+                    contactForm.reset();
+                } else {
+                    formStatus.textContent = 'Por favor complete todos los campos requeridos.';
+                    formStatus.classList.add('error');
+                }
+                setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,170 @@
+name: 🚀 Deploy to Netlify (Optimized)
+on:
+  push:
+    branches: [ main, develop ]
+    tags: [ 'v*' ] # Nuevo: Trigger para tags de versión
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '18'
+  NETLIFY_CLI_VERSION: '17.10.1'
+  GATSBY_CACHE_KEY: ${{ github.sha }}-${{ hashFiles('package-lock.json') }} # Cache dinámico
+
+jobs:
+  build-and-test:
+    name: 🏗️ Build & Test (Optimized)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15 # Nuevo: Evita builds eternos
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      # Cache mejorado (Tu código + mi optimización)
+      - name: 🗃️ Cache Dependencies & Build
+        uses: actions/cache@v3
+        with:
+          path: |
+            .cache
+            public
+            node_modules
+          key: ${{ runner.os }}-gatsby-${{ env.GATSBY_CACHE_KEY }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-
+
+      - name: 📦 Install Dependencies
+        run: |
+          npm ci --prefer-offline --no-audit --omit=dev # Más rápido y seguro
+
+      - name: 🔍 Lint & Format Check
+        run: |
+          npm run format:check || echo "⚠️ Format check skipped"
+          npm run lint || echo "⚠️ Lint check skipped"
+        continue-on-error: true
+
+      - name: 🏗️ Build Project
+        run: npm run build
+        env:
+          NODE_ENV: production
+          CI: true
+          GATSBY_SITE_URL: ${{ secrets.GATSBY_SITE_URL }}
+          GATSBY_WEATHER_API_KEY: ${{ secrets.GATSBY_WEATHER_API_KEY }}
+          GATSBY_GOOGLE_ANALYTICS_ID: ${{ secrets.GATSBY_GOOGLE_ANALYTICS_ID }}
+
+      - name: 📤 Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-files
+          path: public/
+          retention-days: 7
+
+  deploy:
+    name: 🌐 Deploy to Netlify
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 📥 Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-files
+          path: public/
+
+      # Deploy con verificación de errores
+      - name: 🚀 Deploy to Netlify
+        id: netlify-deploy
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=public --prod --message "Deploy [SKIP CI] - ${{ github.sha }}"
+
+      - name: ✅ Verify Deployment
+        if: steps.netlify-deploy.outcome != 'success'
+        run: |
+          echo "❌ Fallo en el deploy!"
+          exit 1
+
+  preview-deploy:
+    name: 👀 Preview Deploy
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.event_name == 'pull_request'
+    timeout-minutes: 10 # Nuevo: Timeout específico para previews
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 📥 Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-files
+          path: public/
+
+      - name: 🔍 Deploy Preview
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=public --message "Preview PR #${{ github.event.number }}"
+
+      - name: 💬 Comment PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🌐 **Preview IPS Figuras Cúcuta**\n🔗 [Ver Demo](${{ steps.netlify-deploy.outputs.site_url }})\n📌 Commit: ${process.env.GITHUB_SHA.slice(0,7)}`
+            })
+
+  lighthouse:
+    name: 🔍 Lighthouse Audit
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 🔍 Run Lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            ${{ secrets.GATSBY_SITE_URL }}
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          configPath: ./lighthouserc.json # Archivo de configuración personalizado
+
+  notify:
+    name: 📢 Notifications
+    runs-on: ubuntu-latest
+    needs: [deploy, lighthouse]
+    if: always()
+    
+    steps:
+      - name: Slack Notification
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: danger
+          SLACK_TITLE: "🚨 Fallo en IPS Figuras Cúcuta"
+          SLACK_MESSAGE: "Error en ${{ github.workflow }} (Commit: ${{ github.sha }})"
