@@ -1,0 +1,26 @@
+{
+  "name": "ips-fig-cucuta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web IPS Figuras SST Cúcuta SAS",
+  "author": "IPS FIGURAS SST CÚCUTA SAS",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^5.0.0",
+    "gatsby-plugin-image": "^3.0.0",
+    "gatsby-plugin-manifest": "^5.0.0",
+    "gatsby-plugin-netlify": "^5.1.1",
+    "gatsby-plugin-offline": "^6.0.0",
+    "gatsby-plugin-sharp": "^5.0.0",
+    "gatsby-source-filesystem": "^5.0.0",
+    "gatsby-transformer-sharp": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
