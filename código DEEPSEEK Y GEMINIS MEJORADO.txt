@@ -1,0 +1,3225 @@
+código DEEPSEEK Y GEMINIS MEJORADO ULTIMO y logo3d
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS FIGURAS SST CÚCUTA SAS | Salud Ocupacional y Especialidades Médicas</title>
+    
+    <!-- Meta Tags SEO Mejorados -->
+    <meta name="description" content="IPS especializada en salud ocupacional en Cúcuta. Exámenes médicos laborales, cardiología, odontología y más. Atención humanizada y profesional.">
+    <meta name="keywords" content="IPS Cúcuta, salud ocupacional, exámenes médicos, medicina laboral, cardiología, audiometría, oftalmología ocupacional, cursos manipulación alimentos">
+    <meta name="author" content="IPS FIGURAS SST CÚCUTA SAS">
+    <link rel="canonical" href="https://www.ipsfigurassst.com" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="IPS FIGURAS SST CÚCUTA SAS | Salud Ocupacional Integral">
+    <meta property="og:description" content="Especialistas en salud ocupacional y medicina laboral en Cúcuta. Exámenes médicos, cursos y atención de calidad.">
+    <meta property="og:image" content="https://www.ipsfigurassst.com/images/og-image.jpg">
+    <meta property="og:url" content="https://www.ipsfigurassst.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+    
+    <!-- Favicon y Preconexiones -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload para fuentes críticas -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    
+    <!-- CSS Crítico (Above the Fold) -->
+    <style>
+        /* --- Variables CSS Mejoradas --- */
+        :root {
+            --primary-color: #0056b3;
+            --primary-light: #4a86ff;
+            --secondary-color: #00a859;
+            --dark-color: #1a2a49;
+            --light-color: #f8f9ff;
+            --text-color: #333;
+            --light-text: #666;
+            --white: #ffffff;
+            --off-white: #f5f7fa;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --max-width: 1200px;
+        }
+        
+        /* --- Estilos Críticos --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-color);
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700; 
+            color: var(--dark-color); 
+            line-height: 1.2;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+        }
+        :focus-visible {
+            outline: 3px solid var(--primary-light);
+            outline-offset: 3px;
+        }
+        
+        /* --- Componentes Críticos --- */
+        .navbar {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.97); 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); 
+            z-index: 1000; 
+            transition: var(--transition);
+        }
+        .hero {
+            height: 100vh; 
+            min-height: 700px; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.85) 0%, rgba(0, 168, 89, 0.75) 100%), url('images/hero-background.jpg') no-repeat center center/cover;
+            color: var(--white); 
+            position: relative;
+            padding-top: 80px;
+        }
+    </style>
+    
+    <!-- Schema Markup (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "name": "IPS FIGURAS SST CÚCUTA SAS",
+      "url": "https://www.ipsfigurassst.com",
+      "logo": "https://www.ipsfigurassst.com/images/logo.png",
+      "description": "IPS especializada en salud ocupacional y medicina laboral en Cúcuta, Colombia.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 21A #0B-122",
+        "addressLocality": "Cúcuta",
+        "addressRegion": "Norte de Santander",
+        "postalCode": "540001",
+        "addressCountry": "CO"
+      },
+      "telephone": "+573138914384",
+      "openingHours": "Mo-Fr 06:00-18:00, Sa 06:00-13:00",
+      "medicalSpecialties": [
+        "OccupationalMedicine",
+        "Cardiology",
+        "Dentistry",
+        "Ophthalmology",
+        "Psychology"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to Content Link (Accesibilidad) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <nav class="navbar" aria-label="Navegación principal">
+        <div class="container navbar-container">
+            <a href="#inicio" class="logo">
+                <img src="images/logo.png" alt="Logo IPS FIGURAS SST" class="logo-img" width="50" height="50">
+                <div class="logo-text">
+                    <span class="main">IPS FIGURAS</span>
+                    <span class="sub">SST CÚCUTA SAS</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Menú</span>
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul id="primary-navigation" class="nav-links">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section id="inicio" class="hero" aria-labelledby="hero-heading">
+            <div class="container hero-content">
+                <h1 id="hero-heading">Especialistas en Salud Ocupacional y Medicina Integral</h1>
+                <p class="hero-subtitle">Cuidamos de tu equipo con profesionalismo y calidez humana.</p>
+                <div class="hero-btns">
+                    <a href="#contacto" class="btn btn-primary"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Cita</a>
+                    <a href="#servicios" class="btn btn-secondary"><i class="fas fa-search" aria-hidden="true"></i> Nuestros Servicios</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="section" aria-labelledby="servicios-heading">
+            <div class="container">
+                <h2 id="servicios-heading" class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Ofrecemos una amplia gama de servicios médicos ocupacionales, brindados con la más alta calidad y un enfoque en el bienestar integral.</p>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-img">
+                            <img src="images/medicina-laboral.jpg" alt="Médico realizando examen ocupacional" loading="lazy" width="400" height="220" onerror="this.src='https://placehold.co/400x220/0056b3/ffffff?text=Medicina+Laboral';">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-user-md" aria-hidden="true"></i> Medicina Laboral</h3>
+                            <p>Exámenes de ingreso, periódicos y de egreso. Valoración de puesto de trabajo y vigilancia epidemiológica.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-img">
+                            <img src="images/laboratorio-clinico.jpg" alt="Técnico de laboratorio realizando análisis" loading="lazy" width="400" height="220" onerror="this.src='https://placehold.co/400x220/00a859/ffffff?text=Laboratorio';">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-vial" aria-hidden="true"></i> Laboratorio Clínico</h3>
+                            <p>Análisis clínicos generales y específicos para diagnósticos precisos, confiables y entregados a tiempo.</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-img">
+                            <img src="images/cardiologia.jpg" alt="Cardiólogo realizando electrocardiograma" loading="lazy" width="400" height="220" onerror="this.src='https://placehold.co/400x220/ff6b00/ffffff?text=Cardiología';">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-heartbeat" aria-hidden="true"></i> Cardiología</h3>
+                            <p>Diagnóstico y tratamiento de enfermedades cardiovasculares, con electrocardiogramas y pruebas de esfuerzo.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="especialidades" class="section bg-light" aria-labelledby="especialidades-heading">
+            <div class="container">
+                <h2 id="especialidades-heading" class="section-title">Otras Especialidades</h2>
+                <p class="section-subtitle">Contamos con un equipo multidisciplinario para atender todas sus necesidades de salud.</p>
+                <div class="specialties-grid">
+                    <article class="specialty-card">
+                        <div class="specialty-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+                        <h3>Psicología</h3>
+                        <img src="images/psicologia.jpg" alt="Psicóloga en consulta con paciente" loading="lazy" width="300" height="200" style="border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none';">
+                        <p>Evaluaciones psicosociales, manejo de estrés laboral y apoyo para el bienestar mental.</p>
+                    </article>
+                    <article class="specialty-card">
+                        <div class="specialty-icon"><i class="fas fa-tooth" aria-hidden="true"></i></div>
+                        <h3>Odontología</h3>
+                        <img src="images/odontologia.jpg" alt="Odontóloga realizando examen bucal" loading="lazy" width="300" height="200" style="border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none';">
+                        <p>Servicios odontológicos generales y especializados para la salud bucal integral.</p>
+                    </article>
+                    <article class="specialty-card">
+                        <div class="specialty-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
+                        <h3>Oftalmología</h3>
+                        <img src="images/oftalmologia.jpg" alt="Oftalmólogo examinando paciente" loading="lazy" width="300" height="200" style="border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none';">
+                        <p>Exámenes visuales ocupacionales, optometría y diagnóstico de patologías oculares.</p>
+                    </article>
+                    <article class="specialty-card">
+                        <div class="specialty-icon"><i class="fas fa-utensils" aria-hidden="true"></i></div>
+                        <h3>Cursos Alimentos</h3>
+                        <img src="images/cursos-alimentos.jpg" alt="Personas en curso de manipulación de alimentos" loading="lazy" width="300" height="200" style="border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none';">
+                        <p>Capacitación certificada en manipulación higiénica de alimentos para personal de empresas.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="section" aria-labelledby="nosotros-heading">
+            <div class="container">
+                <h2 id="nosotros-heading" class="section-title">Sobre Nosotros</h2>
+                <div class="about-container">
+                    <div class="about-content">
+                        <h3>Calidad y Atención Humanizada</h3>
+                        <p>Somos una IPS con enfoque en salud ocupacional y medicina integral, comprometidos con la calidad y el bienestar de nuestros pacientes. Contamos con un equipo de profesionales altamente calificados y tecnología de vanguardia.</p>
+                        <ul class="about-features">
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Certificaciones y Calidad</li>
+                            <li><i class="fas fa-users" aria-hidden="true"></i> Equipo Humano Experto</li>
+                            <li><i class="fas fa-heartbeat" aria-hidden="true"></i> Tecnología Avanzada</li>
+                        </ul>
+                    </div>
+                    <div class="about-img">
+                        <img src="images/equipo-medico.jpg" alt="Equipo médico de IPS FIGURAS" loading="lazy" width="500" height="350">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="section bg-light" aria-labelledby="testimonios-heading">
+            <div class="container">
+                <h2 id="testimonios-heading" class="section-title">Lo que dicen nuestros clientes</h2>
+                <p class="section-subtitle">La confianza y satisfacción de quienes nos eligen es nuestro mayor orgullo.</p>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <blockquote class="testimonial-text">
+                            <p>"El proceso de exámenes ocupacionales fue rápido y muy profesional. El personal es amable y eficiente. ¡Totalmente recomendados!"</p>
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-img"><img src="images/testimonio-ingeniera.jpg" alt="Ing. Sofía Vargas" loading="lazy" width="60" height="60" onerror="this.src='https://placehold.co/60x60/0056b3/ffffff?text=SV';"></div>
+                            <div>
+                                <div class="author-name">Ing. Sofía Vargas</div>
+                                <div class="author-role">Jefe de Seguridad, Constructora Andina</div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial-card">
+                        <blockquote class="testimonial-text">
+                            <p>"La atención en cardiología fue excelente. El doctor explicó todo con claridad y las instalaciones son muy modernas. Me sentí muy bien atendida."</p>
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-img"><img src="images/testimonio-administrativa.jpg" alt="Laura Méndez" loading="lazy" width="60" height="60" onerror="this.src='https://placehold.co/60x60/00a859/ffffff?text=LM';"></div>
+                           
+
+
+ARCHIVO ANIMATIOS JS.
+
+
+
+
+
+/**
+ * Maneja todas las animaciones y efectos visuales de la página web de IPS FIGURAS SST
+ * con técnicas modernas y optimizadas para rendimiento.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // --- POLYFILLS Y FUNCIONES DE APOYO ---
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = (callback) => {
+      return setTimeout(callback, 16);
+    };
+  }
+
+  function debounce(func, wait = 15, immediate = false) {
+    let timeout;
+    return function() {
+      const context = this, args = arguments;
+      const later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (immediate && !timeout) func.apply(context, args);
+    };
+  }
+
+  // --- ELEMENTOS DEL DOM ---
+  const navbar = document.querySelector('.navbar');
+  const backToTopBtn = document.querySelector('.back-to-top');
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-links li a');
+
+  if (!navbar || !backToTopBtn || sections.length === 0 || navLinks.length === 0) {
+    console.error('No se encontraron algunos elementos requeridos');
+    return;
+  }
+
+  // --- MANEJO DEL SCROLL ---
+  function handleScroll() {
+    // Efecto de navbar al hacer scroll
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    
+    // Botón "volver arriba"
+    backToTopBtn.classList.toggle('active', window.scrollY > 300);
+  }
+
+  // Usar debounce para optimizar el rendimiento
+  window.addEventListener('scroll', debounce(handleScroll));
+
+  // --- NAVEGACIÓN ACTIVA CON INTERSECTION OBSERVER ---
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle(
+            'active', 
+            link.getAttribute('href') === `#${id}`
+          );
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(section => navObserver.observe(section));
+
+  // --- DESPLAZAMIENTO SUAVE MEJORADO ---
+  function smoothScroll(target, duration = 800) {
+    const targetElement = document.querySelector(target);
+    if (!targetElement) return;
+
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition - 80;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const ease = progress < 0.5 
+        ? 2 * progress * progress 
+        : -1 + (4 - 2 * progress) * progress;
+      
+      window.scrollTo(0, startPosition + distance * ease);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    requestAnimationFrame(animation);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = this.getAttribute('href');
+      if (target === '#') {
+        e.preventDefault();
+        return;
+      }
+      e.preventDefault();
+      smoothScroll(target);
+    });
+  });
+
+  // --- ANIMACIONES AL SCROLL (MEJORADO CON INTERSECTION OBSERVER) ---
+  const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.animate-in').forEach(el => {
+    animationObserver.observe(el);
+  });
+
+  // --- BOTÓN VOLVER ARRIBA ---
+  backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    smoothScroll('#inicio', 500);
+  });
+});
+
+
+COMANDO SI FALLA BUILD
+
+[build]
+  command = "node --max_old_space_size=6144 node_modules/.bin/gatsby build"
+
+
+CADUCEO IPS FIGURAS
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IPS FIGURAS SST CUCUTA SAS - Servicios de Salud y Seguridad en el Trabajo">
+    <title>Caduceo IPS FIGURAS SST CUCUTA SAS</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --gold-color: #DAA520;
+            --light-gold: #FFD700;
+            --green-snake: #32CD32;
+            --blue-snake: #4169E1;
+            --text-color: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .caduceo-container {
+            text-align: center;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            max-width: 90%;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .caduceo-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.8s ease-out;
+            pointer-events: none;
+        }
+
+        .caduceo-container:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        .caduceo-container:hover::before {
+            transform: scale(1);
+        }
+
+        .company-header {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .company-header:hover {
+            text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.5);
+        }
+
+        .company-name {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            animation: glow 3s ease-in-out infinite alternate;
+            letter-spacing: 0.05em;
+        }
+
+        .company-description {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .caduceo-svg {
+            width: 200px;
+            height: 300px;
+            margin: 1.5rem auto;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+
+        .caduceo-svg:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .staff {
+            fill: var(--gold-color);
+            stroke: #B8860B;
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
+
+        .snake {
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: all 0.5s ease;
+            animation: snake-pulse 2.5s ease-in-out infinite alternate;
+        }
+
+        .snake1 {
+            stroke: var(--green-snake);
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            animation: snake-draw 3s ease-in-out forwards, snake-pulse 2.5s ease-in-out infinite alternate 3s;
+        }
+
+        .snake2 {
+            stroke: var(--blue-snake);
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            animation: snake-draw 3s ease-in-out 0.5s forwards, snake-pulse 2.5s ease-in-out infinite alternate 3.5s;
+        }
+
+        .snake-head {
+            transition: all 0.3s ease;
+            animation: head-glow 2s ease-in-out infinite alternate;
+            opacity: 0;
+            animation-delay: 3s;
+        }
+
+        .snake1-head {
+            fill: var(--green-snake);
+            animation: head-glow 2s ease-in-out infinite alternate, fade-in 0.5s ease-out forwards;
+            animation-delay: 3s;
+        }
+
+        .snake2-head {
+            fill: var(--blue-snake);
+            animation: head-glow 2s ease-in-out infinite alternate, fade-in 0.5s ease-out forwards;
+            animation-delay: 3.5s;
+        }
+
+        .eye {
+            fill: #000;
+            opacity: 0;
+            animation: fade-in 0.5s ease-out forwards;
+        }
+
+        .eye1 {
+            animation-delay: 3.2s;
+        }
+
+        .eye2 {
+            animation-delay: 3.7s;
+        }
+
+        .wing {
+            fill: var(--light-gold);
+            stroke: var(--gold-color);
+            stroke-width: 1;
+            transition: all 0.3s ease;
+            transform-origin: center bottom;
+            animation: wing-flutter 3s ease-in-out infinite;
+            opacity: 0;
+            animation: wing-flutter 3s ease-in-out infinite, fade-in 0.5s ease-out forwards;
+        }
+
+        .wing-left {
+            animation-delay: 1s, 1s;
+        }
+
+        .wing-right {
+            animation-delay: 1.5s, 1.5s;
+        }
+
+        .medical-text {
+            color: var(--text-color);
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .medical-text:hover {
+            opacity: 1;
+            text-shadow: 1px 1px 6px rgba(255, 215, 0, 0.8);
+        }
+
+        .interactive-hint {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            margin-top: 1rem;
+            animation: fade-hint 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes glow {
+            0% { color: var(--text-color); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+            100% { color: var(--light-gold); text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.5); }
+        }
+
+        @keyframes snake-draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes snake-pulse {
+            0% { 
+                stroke-width: 8;
+                opacity: 0.8; 
+            }
+            100% { 
+                stroke-width: 10;
+                opacity: 1; 
+            }
+        }
+
+        @keyframes head-glow {
+            0% { 
+                filter: drop-shadow(0 0 5px currentColor);
+            }
+            100% { 
+                filter: drop-shadow(0 0 15px currentColor);
+            }
+        }
+
+        @keyframes wing-flutter {
+            0%, 100% { 
+                transform: rotateX(0deg) rotateZ(0deg);
+            }
+            25% { 
+                transform: rotateX(-10deg) rotateZ(-3deg);
+            }
+            75% { 
+                transform: rotateX(10deg) rotateZ(3deg);
+            }
+        }
+
+        @keyframes fade-hint {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes click-burst {
+            0% { 
+                transform: scale(1) rotate(0deg);
+                filter: brightness(1);
+            }
+            50% { 
+                transform: scale(1.15) rotate(5deg);
+                filter: brightness(1.5);
+            }
+            100% { 
+                transform: scale(1) rotate(0deg);
+                filter: brightness(1);
+            }
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Efecto de partículas */
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Mejoras de accesibilidad */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Media queries para responsividad */
+        @media (max-width: 768px) {
+            .caduceo-container {
+                padding: 1.5rem;
+            }
+            
+            .caduceo-svg {
+                width: 150px;
+                height: 225px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .caduceo-container {
+                border-radius: 15px;
+            }
+            
+            .company-name {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="caduceo-container" id="caduceoContainer" aria-labelledby="companyTitle companyDesc" role="region">
+        <h1 id="companyTitle" class="company-header">
+            <div class="company-name">IPS FIGURAS SST CUCUTA SAS</div>
+            <div class="company-description">Servicios de Salud y Seguridad en el Trabajo</div>
+        </h1>
+        
+        <svg class="caduceo-svg" viewBox="0 0 200 300" id="caduceoSvg" aria-labelledby="caduceoDesc" role="img">
+            <title id="caduceoDesc">Símbolo del Caduceo, emblema médico</title>
+            <desc>Representación del caduceo con dos serpientes entrelazadas alrededor de un bastón con alas en la parte superior</desc>
+            
+            <!-- Bastón central -->
+            <rect x="95" y="40" width="10" height="200" class="staff" />
+            
+            <!-- Serpiente 1 (izquierda, verde) -->
+            <path d="M85 60 Q60 80 85 100 Q110 120 85 140 Q60 160 85 180 Q110 200 85 220" 
+                  class="snake snake1" id="snake1" />
+            
+            <!-- Serpiente 2 (derecha, azul) -->
+            <path d="M115 60 Q140 80 115 100 Q90 120 115 140 Q140 160 115 180 Q90 200 115 220" 
+                  class="snake snake2" id="snake2" />
+            
+            <!-- Cabezas de serpientes -->
+            <circle cx="85" cy="60" r="8" class="snake-head snake1-head" />
+            <circle cx="115" cy="60" r="8" class="snake-head snake2-head" />
+            
+            <!-- Ojos de las serpientes -->
+            <circle cx="82" cy="57" r="2" class="eye eye1" />
+            <circle cx="88" cy="57" r="2" class="eye eye1" />
+            <circle cx="112" cy="57" r="2" class="eye eye2" />
+            <circle cx="118" cy="57" r="2" class="eye eye2" />
+            
+            <!-- Alas -->
+            <path d="M85 50 Q60 30 40 40 Q50 60 85 55" class="wing wing-left" />
+            <path d="M115 50 Q140 30 160 40 Q150 60 115 55" class="wing wing-right" />
+        </svg>
+        
+        <div class="medical-text">SÍMBOLO MÉDICO</div>
+        <div class="interactive-hint">Haz clic para interactuar</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('caduceoContainer');
+            const svg = document.getElementById('caduceoSvg');
+            const snake1 = document.getElementById('snake1');
+            const snake2 = document.getElementById('snake2');
+
+            // Efecto de clic mejorado con partículas
+            container.addEventListener('click', function(e) {
+                this.classList.add('click-effect');
+                
+                // Cambiar colores temporalmente
+                snake1.style.stroke = '#FF6B6B';
+                snake2.style.stroke = '#4ECDC4';
+                
+                // Crear efecto de partículas
+                createParticles(e);
+                
+                setTimeout(() => {
+                    this.classList.remove('click-effect');
+                    snake1.style.stroke = '';
+                    snake2.style.stroke = '';
+                }, 600);
+            });
+
+            // Función para crear partículas
+            function createParticles(e) {
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                for (let i = 0; i < 15; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Tamaño y posición aleatoria
+                    const size = Math.random() * 5 + 2;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${x}px`;
+                    particle.style.top = `${y}px`;
+                    
+                    // Color aleatorio (dorado, verde, azul)
+                    const colors = ['#FFD700', '#32CD32', '#4169E1'];
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.backgroundColor = color;
+                    
+                    // Animación
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = Math.random() * 50 + 30;
+                    const duration = Math.random() * 1000 + 500;
+                    
+                    particle.style.transform = `translate(0, 0)`;
+                    particle.style.transition = `all ${duration}ms ease-out`;
+                    particle.style.opacity = '1';
+                    
+                    container.appendChild(particle);
+                    
+                    // Iniciar animación
+                    setTimeout(() => {
+                        particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+                        particle.style.opacity = '0';
+                    }, 10);
+                    
+                    // Eliminar partícula después de la animación
+                    setTimeout(() => {
+                        particle.remove();
+                    }, duration + 100);
+                }
+            }
+
+            // Efecto de movimiento del mouse en 3D mejorado
+            container.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                
+                const rotateX = (mouseY - centerY) / 25;
+                const rotateY = (centerX - mouseX) / 25;
+                
+                svg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                
+                // Efecto parallax en las serpientes
+                const snake1Offset = (mouseX - centerX) / 50;
+                const snake2Offset = (mouseX - centerX) / 50;
+                
+                snake1.setAttribute('d', `M85 60 Q${60 - snake1Offset} 80 85 100 Q${110 - snake1Offset} 120 85 140 Q${60 - snake1Offset} 160 85 180 Q${110 - snake1Offset} 200 85 220`);
+                snake2.setAttribute('d', `M115 60 Q${140 - snake2Offset} 80 115 100 Q${90 - snake2Offset} 120 115 140 Q${140 - snake2Offset} 160 115 180 Q${90 - snake2Offset} 200 115 220`);
+            });
+
+            // Restablecer posición al salir el mouse
+            container.addEventListener('mouseleave', function() {
+                svg.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+                
+                // Restaurar posición original de las serpientes
+                snake1.setAttribute('d', 'M85 60 Q60 80 85 100 Q110 120 85 140 Q60 160 85 180 Q110 200 85 220');
+                snake2.setAttribute('d', 'M115 60 Q140 80 115 100 Q90 120 115 140 Q140 160 115 180 Q90 200 115 220');
+            });
+
+            // Animación de entrada mejorada
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(50px) scale(0.9)';
+            container.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0px) scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+LOGO INTERACIVO CLAUDE 
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IPS FIGURAS SST CUCUTA SAS - Servicios de Salud y Seguridad en el Trabajo">
+    <title>IPS FIGURAS SST CUCUTA SAS - Logo Interactivo</title>
+    <style>
+        :root {
+            --primary-blue: #1E3A8A;
+            --secondary-blue: #3B82F6;
+            --bright-green: #00D84A;
+            --dark-green: #16A34A;
+            --gold-color: #FFD700;
+            --white: #FFFFFF;
+            --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .header-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInDown 1s ease-out 0.5s forwards;
+        }
+
+        .website-url {
+            color: var(--white);
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-weight: 500;
+            text-shadow: var(--text-shadow);
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .logo-container {
+            position: relative;
+            width: min(400px, 85vw);
+            height: min(400px, 85vw);
+            margin: 1rem auto;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            will-change: transform;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
+        }
+
+        .circular-logo {
+            width: 100%;
+            height: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .outer-circle {
+            fill: var(--primary-blue);
+            stroke: var(--white);
+            stroke-width: 4;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+            transition: stroke-width 0.3s ease;
+        }
+
+        .outer-circle:hover {
+            stroke-width: 6;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+        }
+
+        .inner-circle {
+            fill: var(--secondary-blue);
+            stroke: var(--white);
+            stroke-width: 2;
+            stroke-dasharray: 0 20;
+            animation: dash-rotate 20s linear infinite;
+        }
+
+        .center-circle {
+            fill: var(--primary-blue);
+            stroke: var(--white);
+            stroke-width: 3;
+            transition: all 0.3s ease;
+        }
+
+        .caduceo-staff {
+            fill: var(--bright-green);
+            stroke: var(--dark-green);
+            stroke-width: 1;
+            filter: drop-shadow(0 0 10px var(--bright-green));
+            transition: all 0.3s ease;
+        }
+
+        .caduceo-snake {
+            fill: none;
+            stroke: var(--bright-green);
+            stroke-width: 3;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 6px var(--bright-green));
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: snake-draw 2s ease-out forwards, snake-glow 2s ease-in-out infinite alternate 2s;
+        }
+
+        .snake-left {
+            animation-delay: 0.3s, 2.3s;
+        }
+
+        .snake-right {
+            animation-delay: 0.6s, 2.6s;
+        }
+
+        .caduceo-wings {
+            fill: var(--gold-color);
+            stroke: #B8860B;
+            stroke-width: 1;
+            filter: drop-shadow(0 0 4px var(--gold-color));
+            transform-origin: center;
+            animation: wing-flutter 2.5s ease-in-out infinite, fade-in 0.6s ease-out 1.5s forwards;
+            opacity: 0;
+        }
+
+        .wing-left {
+            animation-delay: 0s, 1.5s;
+        }
+
+        .wing-right {
+            animation-delay: 0.3s, 1.7s;
+        }
+
+        .text-element {
+            fill: var(--white);
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-weight: 900;
+            text-shadow: var(--text-shadow);
+            opacity: 0;
+            animation: text-appear 0.6s ease-out forwards;
+        }
+
+        .main-text {
+            font-size: 32px;
+            animation-delay: 1s;
+        }
+
+        .sub-text {
+            font-size: 14px;
+            animation-delay: 1.3s;
+        }
+
+        .bottom-icons {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 1.8s forwards;
+        }
+
+        .icon-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .icon-group:hover {
+            transform: translateY(-8px) scale(1.08);
+        }
+
+        .icon-svg {
+            width: 45px;
+            height: 45px;
+            fill: var(--bright-green);
+            filter: drop-shadow(0 4px 12px rgba(0, 212, 74, 0.25));
+            transition: all 0.3s ease;
+        }
+
+        .icon-group:hover .icon-svg {
+            filter: drop-shadow(0 6px 20px rgba(0, 212, 74, 0.5));
+            transform: rotateY(12deg);
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--bright-green);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10;
+            animation: particle-float 2s ease-out forwards;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes dash-rotate {
+            from {
+                stroke-dashoffset: 0;
+            }
+            to {
+                stroke-dashoffset: 628;
+            }
+        }
+
+        @keyframes snake-draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes snake-glow {
+            0% {
+                stroke-width: 3;
+                filter: drop-shadow(0 0 8px var(--bright-green));
+            }
+            100% {
+                stroke-width: 4;
+                filter: drop-shadow(0 0 15px var(--bright-green));
+            }
+        }
+
+        @keyframes wing-flutter {
+            0%, 100% {
+                transform: rotateZ(0deg) scale(1);
+            }
+            25% {
+                transform: rotateZ(-5deg) scale(1.05);
+            }
+            75% {
+                transform: rotateZ(5deg) scale(1.05);
+            }
+        }
+
+        @keyframes text-appear {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes click-pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .click-effect {
+            animation: click-pulse 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .main-text {
+                font-size: 24px;
+            }
+
+            .sub-text {
+                font-size: 12px;
+            }
+
+            .bottom-icons {
+                gap: 30px;
+                bottom: -50px;
+            }
+
+            .icon-svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .main-text {
+                font-size: 20px;
+            }
+
+            .sub-text {
+                font-size: 10px;
+            }
+
+            .bottom-icons {
+                gap: 20px;
+                bottom: -40px;
+            }
+
+            .icon-svg {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-info">
+        <div class="website-url">🌐 https://trabajosenalturaipsfigurascucuta.com</div>
+    </div>
+
+    <div class="logo-container" id="logoContainer">
+        <svg class="circular-logo" viewBox="0 0 400 400" id="logoSvg">
+            <!-- Círculo exterior -->
+            <circle cx="200" cy="200" r="190" class="outer-circle" />
+            
+            <!-- Círculo interior con puntos -->
+            <circle cx="200" cy="200" r="140" class="inner-circle" />
+            
+            <!-- Círculo central -->
+            <circle cx="200" cy="200" r="80" class="center-circle" />
+            
+            <!-- Texto circular superior "FIGURAS SST" -->
+            <path id="top-curve" d="M 80 200 A 120 120 0 0 1 320 200" fill="none" />
+            <text class="text-element main-text">
+                <textPath href="#top-curve" startOffset="50%" text-anchor="middle">
+                    FIGURAS SST
+                </textPath>
+            </text>
+            
+            <!-- Texto circular inferior "CUCUTA" -->
+            <path id="bottom-curve" d="M 320 200 A 120 120 0 0 1 80 200" fill="none" />
+            <text class="text-element main-text">
+                <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
+                    CUCUTA
+                </textPath>
+            </text>
+            
+
+            
+            <!-- Caduceo central -->
+            <g id="caduceo" transform="translate(200, 200)">
+                <!-- Bastón -->
+                <rect x="-2" y="-50" width="4" height="70" class="caduceo-staff" />
+                
+                <!-- Serpientes entrelazadas -->
+                <path d="M-15 -40 Q0 -30 15 -20 Q0 -10 -15 0 Q0 10 15 20" class="caduceo-snake snake-left" />
+                <path d="M15 -40 Q0 -30 -15 -20 Q0 -10 15 0 Q0 10 -15 20" class="caduceo-snake snake-right" />
+                
+                <!-- Alas -->
+                <path d="M-15 -45 Q-30 -55 -40 -45 Q-35 -35 -15 -40" class="caduceo-wings wing-left" />
+                <path d="M15 -45 Q30 -55 40 -45 Q35 -35 15 -40" class="caduceo-wings wing-right" />
+                
+                <!-- Cabezas de serpientes -->
+                <circle cx="-15" cy="-40" r="4" fill="var(--bright-green)" class="text-element" style="animation-delay: 3s;" />
+                <circle cx="15" cy="-40" r="4" fill="var(--bright-green)" class="text-element" style="animation-delay: 3.2s;" />
+            </g>
+            
+            <!-- Puntos decorativos -->
+            <circle cx="80" cy="200" r="8" fill="var(--white)" class="text-element" style="animation-delay: 1.8s;" />
+            <circle cx="320" cy="200" r="8" fill="var(--white)" class="text-element" style="animation-delay: 2.2s;" />
+            <circle cx="200" cy="60" r="8" fill="var(--white)" class="text-element" style="animation-delay: 2.4s;" />
+        </svg>
+        
+        <!-- Iconos inferiores -->
+        <div class="bottom-icons">
+            <div class="icon-group" id="constructionIcon">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M13,3V9.5L15.5,7L17,8.5L14.5,11H21V13H14.5L17,15.5L15.5,17L13,14.5V21H11V14.5L8.5,17L7,15.5L9.5,13H3V11H9.5L7,8.5L8.5,7L11,9.5V3H13Z" />
+                </svg>
+            </div>
+            <div class="icon-group" id="environmentIcon">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12C6,13.5 6.5,14.87 7.36,16L8.77,14.59C8.29,13.8 8,12.93 8,12A4,4 0 0,1 12,8A4,4 0 0,1 16,12C16,12.93 15.71,13.8 15.23,14.59L16.64,16C17.5,14.87 18,13.5 18,12A6,6 0 0,0 12,6M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z" />
+                    <path d="M8,16L10.5,18.5L16,13L14.5,11.5L10.5,15.5L9.5,14.5L8,16Z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoContainer = document.getElementById('logoContainer');
+            const logoSvg = document.getElementById('logoSvg');
+            const caduceo = document.getElementById('caduceo');
+
+            // Efecto de clic con partículas
+            logoContainer.addEventListener('click', function(e) {
+                this.classList.add('click-effect');
+                createParticles(e);
+                
+                // Efecto especial en el caduceo
+                caduceo.style.transform = 'translate(200px, 200px) scale(1.2) rotate(10deg)';
+                
+                setTimeout(() => {
+                    this.classList.remove('click-effect');
+                    caduceo.style.transform = 'translate(200px, 200px) scale(1) rotate(0deg)';
+                }, 600);
+            });
+
+            // Función para crear partículas
+            function createParticles(e) {
+                const rect = logoContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                for (let i = 0; i < 12; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    const size = Math.random() * 6 + 3;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    
+                    const angle = (i / 12) * Math.PI * 2;
+                    const distance = 50 + Math.random() * 30;
+                    const x = Math.cos(angle) * distance;
+                    const y = Math.sin(angle) * distance;
+                    
+                    particle.style.left = '50%';
+                    particle.style.top = '50%';
+                    particle.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+                    
+                    logoContainer.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 2000);
+                }
+            }
+
+            // Efecto de rotación 3D con mouse
+            logoContainer.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                
+                const rotateY = (mouseX - centerX) / 10;
+                const rotateX = (centerY - mouseY) / 10;
+                
+                logoSvg.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+            });
+
+            // Restablecer rotación
+            logoContainer.addEventListener('mouseleave', function() {
+                logoSvg.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+            });
+
+            // Efectos de hover en iconos
+            const icons = document.querySelectorAll('.icon-group');
+            icons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.1) rotateZ(5deg)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotateZ(0deg)';
+                });
+            });
+
+            // Animación continua de respiración para el logo
+            setInterval(() => {
+                logoSvg.style.transform += ' scale(1.02)';
+                setTimeout(() => {
+                    logoSvg.style.transform = logoSvg.style.transform.replace(' scale(1.02)', '');
+                }, 1000);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+LOGO MEJORADO CUBO 3D ///////+++++++++///
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Cúbico 3D - IPS FIGURAS SST CÚCUTA SAS</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232563eb'/><path d='M50 20 L50 80 M35 35 Q50 25 65 35 M35 65 Q50 55 65 65' stroke='%2322c55e' stroke-width='3' fill='none'/><circle cx='50' cy='50' r='8' fill='%23fbbf24'/></svg>" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            perspective: 1200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scene {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: sceneRotate 12s linear infinite;
+        }
+
+        .cube {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform-style: preserve-3d;
+            animation: cubeFloat 6s ease-in-out infinite;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 3px solid rgba(34, 197, 94, 0.4);
+            background: linear-gradient(135deg, 
+                rgba(37, 99, 235, 0.9), 
+                rgba(29, 78, 216, 0.8), 
+                rgba(30, 64, 175, 0.7));
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                inset 0 0 50px rgba(255, 255, 255, 0.1),
+                0 0 50px rgba(34, 197, 94, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cube-face::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, 
+                rgba(34, 197, 94, 0.2) 0%, 
+                transparent 60%);
+            animation: faceGlow 4s ease-in-out infinite alternate;
+        }
+
+        .front { transform: rotateY(0deg) translateZ(150px); }
+        .back { transform: rotateY(180deg) translateZ(150px); }
+        .right { transform: rotateY(90deg) translateZ(150px); }
+        .left { transform: rotateY(-90deg) translateZ(150px); }
+        .top { transform: rotateX(90deg) translateZ(150px); }
+        .bottom { transform: rotateX(-90deg) translateZ(150px); }
+
+        .circular-logo {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e40af);
+            box-shadow: 
+                0 0 30px rgba(37, 99, 235, 0.6),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: logoSpin 8s linear infinite;
+        }
+
+        .circular-logo::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #22c55e, #16a34a, #15803d);
+            z-index: -1;
+            animation: borderSpin 3s linear infinite;
+        }
+
+        .caduceus {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            transform-style: preserve-3d;
+        }
+
+        .staff {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100px;
+            background: linear-gradient(180deg, #fbbf24, #f59e0b, #d97706);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+        }
+
+        .wings {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+        }
+
+        .wing {
+            position: absolute;
+            width: 25px;
+            height: 18px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50% 10px 50% 10px;
+            animation: wingFlutter 1.5s ease-in-out infinite;
+        }
+
+        .wing.left {
+            left: 0;
+            transform-origin: right center;
+        }
+
+        .wing.right {
+            right: 0;
+            transform-origin: left center;
+            transform: scaleX(-1);
+        }
+
+        .snake {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+        }
+
+        .snake-body {
+            position: absolute;
+            width: 6px;
+            height: 45px;
+            background: linear-gradient(180deg, #22c55e, #16a34a, #15803d);
+            border-radius: 3px;
+            animation: snakeMove 2s ease-in-out infinite;
+        }
+
+        .snake-body.left {
+            left: 25%;
+            animation-delay: 0s;
+        }
+
+        .snake-body.right {
+            right: 25%;
+            animation-delay: -1s;
+        }
+
+        .text-display {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            line-height: 1.2;
+        }
+
+        .company-name {
+            transform: rotateX(0deg);
+        }
+
+        .service-text {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: particleFloat 5s ease-in-out infinite;
+        }
+
+        .ambient-light {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            right: -100px;
+            bottom: -100px;
+            background: radial-gradient(circle, 
+                rgba(34, 197, 94, 0.1) 0%, 
+                rgba(37, 99, 235, 0.05) 40%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: ambientPulse 8s ease-in-out infinite;
+        }
+
+        .control-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .control-panel button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-panel button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        /* Animaciones */
+        @keyframes sceneRotate {
+            0% { transform: rotateX(10deg) rotateY(0deg); }
+            25% { transform: rotateX(20deg) rotateY(90deg); }
+            50% { transform: rotateX(10deg) rotateY(180deg); }
+            75% { transform: rotateX(0deg) rotateY(270deg); }
+            100% { transform: rotateX(10deg) rotateY(360deg); }
+        }
+
+        @keyframes cubeFloat {
+            0%, 100% { transform: translateY(0px) rotateX(0deg); }
+            50% { transform: translateY(-20px) rotateX(5deg); }
+        }
+
+        @keyframes logoSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes borderSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        @keyframes wingFlutter {
+            0%, 100% { transform: rotateZ(0deg); }
+            50% { transform: rotateZ(-12deg); }
+        }
+
+        @keyframes snakeMove {
+            0%, 100% { transform: translateX(0) rotateZ(0deg); }
+            25% { transform: translateX(6px) rotateZ(8deg); }
+            75% { transform: translateX(-6px) rotateZ(-8deg); }
+        }
+
+        @keyframes faceGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+
+        @keyframes particleFloat {
+            0% { 
+                opacity: 0; 
+                transform: translateY(0) scale(0); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: translateY(-300px) scale(1); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: translateY(-600px) scale(0); 
+            }
+        }
+
+        @keyframes ambientPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.6; }
+        }
+
+        .paused {
+            animation-play-state: paused !important;
+        }
+
+        @media (max-width: 768px) {
+            .scene {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .cube {
+                width: 200px;
+                height: 200px;
+                top: 50px;
+                left: 50px;
+            }
+            
+            .cube-face {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .circular-logo {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .control-panel {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light"></div>
+    
+    <div class="scene" id="scene">
+        <div class="cube" id="cube">
+            <!-- Cara frontal -->
+            <div class="cube-face front">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cara posterior -->
+            <div class="cube-face back">
+                <div class="text-display company-name">
+                    <div>
+                        <div style="font-size: 16px; margin-bottom: 10px;">IPS</div>
+                        <div style="font-size: 14px; margin-bottom: 5px;">FIGURAS SST</div>
+                        <div style="font-size: 14px; margin-bottom: 10px;">CÚCUTA SAS</div>
+                        <div style="font-size: 10px; opacity: 0.8;">Salud y Seguridad</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cara derecha -->
+            <div class="cube-face right">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🏥</div>
+                        <div style="font-size: 12px;">SERVICIOS</div>
+                        <div style="font-size: 12px;">MÉDICOS</div>
+                        <div style="font-size: 12px;">ESPECIALIZADOS</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cara izquierda -->
+            <div class="cube-face left">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🛡️</div>
+                        <div style="font-size: 12px;">SEGURIDAD</div>
+                        <div style="font-size: 12px;">Y SALUD</div>
+                        <div style="font-size: 12px;">OCUPACIONAL</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cara superior -->
+            <div class="cube-face top">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🌍</div>
+                        <div style="font-size: 12px;">CÚCUTA</div>
+                        <div style="font-size: 12px;">NORTE DE</div>
+                        <div style="font-size: 12px;">SANTANDER</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cara inferior -->
+            <div class="cube-face bottom">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">⚕️</div>
+                        <div style="font-size: 12px;">EXCELENCIA</div>
+                        <div style="font-size: 12px;">EN</div>
+                        <div style="font-size: 12px;">SALUD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-particles" id="particles"></div>
+
+    <div class="control-panel">
+        <div style="margin-bottom: 10px; font-weight: bold;">Controles</div>
+        <button onclick="toggleAnimation()">⏸️ Pausar/Reanudar</button>
+        <button onclick="speedUp()">⚡ Acelerar</button>
+        <button onclick="slowDown()">🐌 Ralentizar</button>
+        <button onclick="resetView()">🔄 Reiniciar</button>
+    </div>
+
+    <script>
+        let animationSpeed = 1;
+        let isPaused = false;
+
+        // Crear partículas flotantes
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 25;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${4 + Math.random() * 3}s`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Controles de animación
+        function toggleAnimation() {
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            if (isPaused) {
+                scene.classList.remove('paused');
+                cube.classList.remove('paused');
+                document.querySelectorAll('.circular-logo, .wing, .snake-body').forEach(el => {
+                    el.classList.remove('paused');
+                });
+                isPaused = false;
+            } else {
+                scene.classList.add('paused');
+                cube.classList.add('paused');
+                document.querySelectorAll('.circular-logo, .wing, .snake-body').forEach(el => {
+                    el.classList.add('paused');
+                });
+                isPaused = true;
+            }
+        }
+
+        function speedUp() {
+            animationSpeed = Math.min(animationSpeed * 1.5, 4);
+            updateAnimationSpeed();
+        }
+
+        function slowDown() {
+            animationSpeed = Math.max(animationSpeed / 1.5, 0.25);
+            updateAnimationSpeed();
+        }
+
+        function updateAnimationSpeed() {
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            scene.style.animationDuration = `${12 / animationSpeed}s`;
+            cube.style.animationDuration = `${6 / animationSpeed}s`;
+            
+            document.querySelectorAll('.circular-logo').forEach(el => {
+                el.style.animationDuration = `${8 / animationSpeed}s`;
+            });
+        }
+
+        function resetView() {
+            animationSpeed = 1;
+            isPaused = false;
+            
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            scene.classList.remove('paused');
+            cube.classList.remove('paused');
+            
+            updateAnimationSpeed();
+        }
+
+        // Efectos de hover
+        document.getElementById('cube').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1) rotateX(15deg) rotateY(15deg)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+
+        document.getElementById('cube').addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.transition = 'transform 0.3s ease';
+        });
+
+        // Controles de teclado
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    toggleAnimation();
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    speedUp();
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    slowDown();
+                    break;
+                case 'r':
+                case 'R':
+                    resetView();
+                    break;
+            }
+        });
+
+        // Inicialización
+        createParticles();
+
+        // Recrear partículas periódicamente
+        setInterval(() => {
+            if (document.querySelectorAll('.particle').length < 30) {
+                createParticles();
+            }
+        }, 5000);
+
+        // Efecto de paralaje con el mouse
+        document.addEventListener('mousemove', function(e) {
+            if (!isPaused) {
+                const scene = document.getElementById('scene');
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                
+                const rotateX = (e.clientY - centerY) / 50;
+                const rotateY = (e.clientX - centerX) / 50;
+                
+                scene.style.transform = `rotateX(${10 + rotateX}deg) rotateY(${rotateY}deg)`;
+            }
+        });
+
+        // Limpiar el efecto de paralaje cuando el mouse sale de la ventana
+        document.addEventListener('mouseleave', function() {
+            const scene = document.getElementById('scene');
+            scene.style.transform = '';
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+OTRO LOGO EN GEMINI QUE NO SE
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Cúbico 3D - IPS FIGURAS SST CÚCUTA SAS</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='white' stroke-width='7'/%3E%3Cg stroke='%2322c55e' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M50,82 V28'/%3E%3Cpath d='M50,34 C40,26 30,30 30,30'/%3E%3Cpath d='M50,34 C60,26 70,30 70,30'/%3E%3Cpath d='M60,78 C45,88 35,65 50,55 C65,45 55,22 55,22'/%3E%3Cpath d='M40,78 C55,88 65,65 50,55 C35,45 45,22 45,22'/%3E%3C/g%3E%3C/svg%3E" type="image/svg+xml">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            perspective: 1200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .scene {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: sceneRotate 12s linear infinite;
+        }
+        .cube {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform-style: preserve-3d;
+            animation: cubeFloat 6s ease-in-out infinite;
+        }
+        .cube-face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 3px solid rgba(34, 197, 94, 0.4);
+            background: linear-gradient(135deg, 
+                rgba(37, 99, 235, 0.9), 
+                rgba(29, 78, 216, 0.8), 
+                rgba(30, 64, 175, 0.7));
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                inset 0 0 50px rgba(255, 255, 255, 0.1),
+                0 0 50px rgba(34, 197, 94, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .cube-face::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, 
+                rgba(34, 197, 94, 0.2) 0%, 
+                transparent 60%);
+            animation: faceGlow 4s ease-in-out infinite alternate;
+        }
+        .front { transform: rotateY(0deg) translateZ(150px); }
+        .back { transform: rotateY(180deg) translateZ(150px); }
+        .right { transform: rotateY(90deg) translateZ(150px); }
+        .left { transform: rotateY(-90deg) translateZ(150px); }
+        .top { transform: rotateX(90deg) translateZ(150px); }
+        .bottom { transform: rotateX(-90deg) translateZ(150px); }
+        .circular-logo {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e40af);
+            box-shadow: 
+                0 0 30px rgba(37, 99, 235, 0.6),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: logoSpin 8s linear infinite;
+        }
+        .circular-logo::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #22c55e, #16a34a, #15803d);
+            z-index: -1;
+            animation: borderSpin 3s linear infinite;
+        }
+        .caduceus {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            transform-style: preserve-3d;
+        }
+        .staff {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100px;
+            background: linear-gradient(180deg, #fbbf24, #f59e0b, #d97706);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+        }
+        .wings {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+        }
+        .wing {
+            position: absolute;
+            width: 25px;
+            height: 18px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50% 10px 50% 10px;
+            animation: wingFlutter 1.5s ease-in-out infinite;
+        }
+        .wing.left {
+            left: 0;
+            transform-origin: right center;
+        }
+        .wing.right {
+            right: 0;
+            transform-origin: left center;
+            transform: scaleX(-1);
+        }
+        .snake {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+        }
+        .snake-body {
+            position: absolute;
+            width: 6px;
+            height: 45px;
+            background: linear-gradient(180deg, #22c55e, #16a34a, #15803d);
+            border-radius: 3px;
+            animation: snakeMove 2s ease-in-out infinite;
+        }
+        .snake-body.left {
+            left: 25%;
+            animation-delay: 0s;
+        }
+        .snake-body.right {
+            right: 25%;
+            animation-delay: -1s;
+        }
+        .text-display {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            line-height: 1.2;
+        }
+        .company-name {
+            transform: rotateX(0deg);
+        }
+        .service-text {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: particleFloat 5s ease-in-out infinite;
+        }
+        .ambient-light {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            right: -100px;
+            bottom: -100px;
+            background: radial-gradient(circle, 
+                rgba(34, 197, 94, 0.1) 0%, 
+                rgba(37, 99, 235, 0.05) 40%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: ambientPulse 8s ease-in-out infinite;
+        }
+        .control-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-size: 12px;
+        }
+        .control-panel button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .control-panel button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+        /* Animaciones */
+        @keyframes sceneRotate {
+            0% { transform: rotateX(10deg) rotateY(0deg); }
+            25% { transform: rotateX(20deg) rotateY(90deg); }
+            50% { transform: rotateX(10deg) rotateY(180deg); }
+            75% { transform: rotateX(0deg) rotateY(270deg); }
+            100% { transform: rotateX(10deg) rotateY(360deg); }
+        }
+        @keyframes cubeFloat {
+            0%, 100% { transform: translateY(0px) rotateX(0deg); }
+            50% { transform: translateY(-20px) rotateX(5deg); }
+        }
+        @keyframes logoSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes borderSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        @keyframes wingFlutter {
+            0%, 100% { transform: rotateZ(0deg); }
+            50% { transform: rotateZ(-12deg); }
+        }
+        @keyframes snakeMove {
+            0%, 100% { transform: translateX(0) rotateZ(0deg); }
+            25% { transform: translateX(6px) rotateZ(8deg); }
+            75% { transform: translateX(-6px) rotateZ(-8deg); }
+        }
+        @keyframes faceGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+        @keyframes particleFloat {
+            0% { 
+                opacity: 0; 
+                transform: translateY(0) scale(0); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: translateY(-300px) scale(1); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: translateY(-600px) scale(0); 
+            }
+        }
+        @keyframes ambientPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.6; }
+        }
+        .paused {
+            animation-play-state: paused !important;
+        }
+        @media (max-width: 768px) {
+            .scene {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .cube {
+                width: 200px;
+                height: 200px;
+                top: 50px;
+                left: 50px;
+            }
+            
+            .cube-face {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .circular-logo {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .control-panel {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light"></div>
+    
+    <div class="scene" id="scene">
+        <div class="cube" id="cube">
+            <div class="cube-face front">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face back">
+                <div class="text-display company-name">
+                    <div>
+                        <div style="font-size: 16px; margin-bottom: 10px;">IPS</div>
+                        <div style="font-size: 14px; margin-bottom: 5px;">FIGURAS SST</div>
+                        <div style="font-size: 14px; margin-bottom: 10px;">CÚCUTA SAS</div>
+                        <div style="font-size: 10px; opacity: 0.8;">Salud y Seguridad</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face right">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🏥</div>
+                        <div style="font-size: 12px;">SERVICIOS</div>
+                        <div style="font-size: 12px;">MÉDICOS</div>
+                        <div style="font-size: 12px;">ESPECIALIZADOS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face left">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🛡️</div>
+                        <div style="font-size: 12px;">SEGURIDAD</div>
+                        <div style="font-size: 12px;">Y SALUD</div>
+                        <div style="font-size: 12px;">OCUPACIONAL</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face top">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">🌍</div>
+                        <div style="font-size: 12px;">CÚCUTA</div>
+                        <div style="font-size: 12px;">NORTE DE</div>
+                        <div style="font-size: 12px;">SANTANDER</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cube-face bottom">
+                <div class="text-display service-text">
+                    <div>
+                        <div style="font-size: 18px; margin-bottom: 15px;">⚕️</div>
+                        <div style="font-size: 12px;">EXCELENCIA</div>
+                        <div style="font-size: 12px;">EN</div>
+                        <div style="font-size: 12px;">SALUD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="control-panel">
+        <div style="margin-bottom: 10px; font-weight: bold;">Controles</div>
+        <button onclick="toggleAnimation()">⏸️ Pausar/Reanudar</button>
+        <button onclick="speedUp()">⚡ Acelerar</button>
+        <button onclick="slowDown()">🐌 Ralentizar</button>
+        <button onclick="resetView()">🔄 Reiniciar</button>
+    </div>
+
+    <script>
+        let animationSpeed = 1;
+        let isPaused = false;
+
+        // Crear partículas flotantes
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 25;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${4 + Math.random() * 3}s`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Controles de animación
+        function toggleAnimation() {
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            if (isPaused) {
+                scene.classList.remove('paused');
+                cube.classList.remove('paused');
+                document.querySelectorAll('.circular-logo, .wing, .snake-body').forEach(el => {
+                    el.classList.remove('paused');
+                });
+                isPaused = false;
+            } else {
+                scene.classList.add('paused');
+                cube.classList.add('paused');
+                document.querySelectorAll('.circular-logo, .wing, .snake-body').forEach(el => {
+                    el.classList.add('paused');
+                });
+                isPaused = true;
+            }
+        }
+
+        function speedUp() {
+            animationSpeed = Math.min(animationSpeed * 1.5, 4);
+            updateAnimationSpeed();
+        }
+
+        function slowDown() {
+            animationSpeed = Math.max(animationSpeed / 1.5, 0.25);
+            updateAnimationSpeed();
+        }
+
+        function updateAnimationSpeed() {
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            scene.style.animationDuration = `${12 / animationSpeed}s`;
+            cube.style.animationDuration = `${6 / animationSpeed}s`;
+            
+            document.querySelectorAll('.circular-logo').forEach(el => {
+                el.style.animationDuration = `${8 / animationSpeed}s`;
+            });
+        }
+
+        function resetView() {
+            animationSpeed = 1;
+            isPaused = false;
+            
+            const scene = document.getElementById('scene');
+            const cube = document.getElementById('cube');
+            
+            scene.classList.remove('paused');
+            cube.classList.remove('paused');
+            
+            updateAnimationSpeed();
+        }
+
+        // Efectos de hover
+        document.getElementById('cube').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1) rotateX(15deg) rotateY(15deg)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+
+        document.getElementById('cube').addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.transition = 'transform 0.3s ease';
+        });
+
+        // Controles de teclado
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    toggleAnimation();
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    speedUp();
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    slowDown();
+                    break;
+                case 'r':
+                case 'R':
+                    resetView();
+                    break;
+            }
+        });
+
+        // Inicialización
+        createParticles();
+
+        // Recrear partículas periódicamente
+        setInterval(() => {
+            if (document.querySelectorAll('.particle').length < 30) {
+                createParticles();
+            }
+        }, 5000);
+
+        // Efecto de paralaje con el mouse
+        document.addEventListener('mousemove', function(e) {
+            if (!isPaused) {
+                const scene = document.getElementById('scene');
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                
+                const rotateX = (e.clientY - centerY) / 50;
+                const rotateY = (e.clientX - centerX) / 50;
+                
+                scene.style.transform = `rotateX(${10 + rotateX}deg) rotateY(${rotateY}deg)`;
+            }
+        });
+
+        // Limpiar el efecto de paralaje cuando el mouse sale de la ventana
+        document.addEventListener('mouseleave', function() {
+            const scene = document.getElementById('scene');
+            scene.style.transform = '';
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+Descarga tus credenciales
+Download this credential information in JSON format. Siempre estará disponible en la página de credenciales.
+
+ID de cliente
+1074762304508-05esgpucolv3at72dol347uo0mmjo49l.apps.googleusercontent.com
+
+
+
+
+1074762304508-05esgpucolv3at72dol347uo0mmjo49l.apps.googleusercontent.com
+
+
+
+
+
+
+
+
+
+
+CORECCION FINAL DEL CODIGO
+
+import React, { useState, useEffect } from 'react';
+
+const IPSFooterComponent = () => {
+  const [currentSpecialty, setCurrentSpecialty] = useState('');
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalQuestion, setModalQuestion] = useState('');
+  const [modalResult, setModalResult] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [symptomsInput, setSymptomsInput] = useState('');
+  const [symptomsResult, setSymptomsResult] = useState('');
+  const [isSymptomsLoading, setIsSymptomsLoading] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formStatus, setFormStatus] = useState({ message: '', type: '' });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const apiKey = ""; // Leave empty, will be handled by the environment
+
+  // Gemini API Call Function
+  const callGemini = async (prompt, setResult, setLoading) => {
+    setLoading(true);
+    setResult('');
+
+    const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+    const payload = { contents: chatHistory };
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error en la API: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+
+      if (result.candidates && result.candidates[0] && result.candidates[0].content && result.candidates[0].content.parts[0]) {
+        const text = result.candidates[0].content.parts[0].text;
+        setResult(simpleMarkdownToHtml(text));
+      } else {
+        throw new Error("Respuesta inesperada de la API.");
+      }
+    } catch (error) {
+      console.error("Error al llamar a la API de Gemini:", error);
+      setResult(`<p style="color: red;">Lo sentimos, ocurrió un error al procesar tu solicitud. Por favor, intenta de nuevo más tarde.</p>`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const simpleMarkdownToHtml = (text) => {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')       // Italics
+      .replace(/^- (.*$)/mg, '<li>$1</li>')       // List items
+      .replace(/(\n<li>.*<\/li>)/g, '<ul>$1</ul>') // Wrap lists
+      .replace(/\n/g, '<br>');                      // Newlines
+  };
+
+  // Handle symptom analysis
+  const handleSymptomAnalysis = () => {
+    if (symptomsInput.trim().length < 10) {
+      setSymptomsResult(`<p style="color: orange;">Por favor, describe tus síntomas con más detalle para obtener una mejor orientación.</p>`);
+      return;
+    }
+    const prompt = `Basado en los siguientes síntomas: "${symptomsInput}", ¿cuáles son las posibles especialidades médicas que una persona debería considerar consultar y qué tipo de preguntas clave podría hacerle al doctor? Proporciona la respuesta en formato Markdown, clara y fácil de entender. No ofrezcas un diagnóstico. Comienza con un encabezado de 'Orientación Sugerida'.`;
+    callGemini(prompt, setSymptomsResult, setIsSymptomsLoading);
+  };
+
+  // Handle AI specialist modal
+  const handleSpecialistClick = (specialty) => {
+    setCurrentSpecialty(specialty);
+    setModalQuestion('');
+    setModalResult('');
+    setIsModalVisible(true);
+  };
+
+  const handleModalSubmit = () => {
+    if (modalQuestion.trim().length < 5) {
+      setModalResult('<p style="color: orange;">Por favor, escribe una pregunta.</p>');
+      return;
+    }
+    const prompt = `Como asistente de IA experto en ${currentSpecialty}, responde la siguiente pregunta de forma general e informativa. No des consejos médicos personalizados ni diagnósticos. La pregunta es: "${modalQuestion}"`;
+    callGemini(prompt, setModalResult, setIsLoading);
+  };
+
+  // Handle contact form
+  const handleContactSubmit = () => {
+    let isValid = true;
+
+    // Simple validation
+    if (!formData.name?.trim() || !formData.email?.trim() || !formData.message?.trim()) {
+      isValid = false;
+    }
+
+    if (isValid) {
+      setFormStatus({
+        message: 'Gracias por su mensaje. Nos pondremos en contacto con usted pronto.',
+        type: 'success'
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      setFormStatus({
+        message: 'Por favor complete todos los campos requeridos.',
+        type: 'error'
+      });
+    }
+
+    setTimeout(() => {
+      setFormStatus({ message: '', type: '' });
+    }, 5000);
+  };
+
+  // Scroll effects
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('.navbar');
+      const backToTopBtn = document.querySelector('.back-to-top');
+
+      if (window.scrollY > 50 && navbar) {
+        navbar.classList.add('scrolled');
+      } else if (navbar) {
+        navbar.classList.remove('scrolled');
+      }
+
+      if (window.scrollY > 300 && backToTopBtn) {
+        backToTopBtn.classList.add('active');
+      } else if (backToTopBtn) {
+        backToTopBtn.classList.remove('active');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Load Tawk.to script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://embed.tawk.to/6782005649e2fd8dfe05e884/d4f6d6394e1ae9fc6f9e92ea0cf47b2c7d575c05';
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+
+  return (
+    <>
+      {/* Symptoms Analyzer Section */}
+      <section className="symptoms-analyzer bg-light py-5">
+        <div className="container">
+          <h2 className="text-center mb-4">Analizador de Síntomas con IA</h2>
+          <div className="row justify-content-center">
+            <div className="col-md-8">
+              <div className="form-group">
+                <textarea
+                  value={symptomsInput}
+                  onChange={(e) => setSymptomsInput(e.target.value)}
+                  className="form-control"
+                  rows="4"
+                  placeholder="Describe tus síntomas aquí..."
+                />
+              </div>
+              <button
+                onClick={handleSymptomAnalysis}
+                className="btn btn-primary btn-block"
+                disabled={isSymptomsLoading}
+              >
+                {isSymptomsLoading ? 'Analizando...' : 'Analizar Síntomas'}
+              </button>
+              {isSymptomsLoading && <div className="loading-spinner mt-3"></div>}
+              {symptomsResult && (
+                <div 
+                  className="ai-result mt-3"
+                  dangerouslySetInnerHTML={{ __html: symptomsResult }}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="contact-form py-5">
+        <div className="container">
+          <h2 className="text-center mb-4">Contacto</h2>
+          <div className="row justify-content-center">
+            <div className="col-md-8">
+              <div className="contact-form-container">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Nombre completo"
+                    value={formData.name || ''}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Correo electrónico"
+                    value={formData.email || ''}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  />
+                </div>
+                <div className="form-group">
+                  <textarea
+                    className="form-control"
+                    rows="4"
+                    placeholder="Mensaje"
+                    value={formData.message || ''}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  />
+                </div>
+                <button 
+                  onClick={handleContactSubmit}
+                  className="btn btn-primary btn-block"
+                >
+                  Enviar Mensaje
+                </button>
+              </div>
+              {formStatus.message && (
+                <div className={`form-status mt-3 ${formStatus.type}`}>
+                  {formStatus.message}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer>
+        <div className="footer-container">
+          <div>
+            <div className="footer-col footer-about">
+              <h3>IPS FIGURAS SST CUCUTA SAS</h3>
+              <p>Más de 10 años brindando atención médica especializada con equipos modernos y trato humanizado en Cúcuta y Norte de Santander.</p>
+            </div>
+            <div className="footer-col">
+              <h3>Enlaces Rápidos</h3>
+              <ul className="footer-links">
+                <li><a href="#inicio"><i className="fas fa-angle-right"></i>Inicio</a></li>
+                <li><a href="#servicios"><i className="fas fa-angle-right"></i>Servicios</a></li>
+                <li><a href="#nosotros"><i className="fas fa-angle-right"></i>Nosotros</a></li>
+                <li><a href="#contacto"><i className="fas fa-angle-right"></i>Contacto</a></li>
+              </ul>
+            </div>
+            <div className="footer-col">
+              <h3>Especialidades</h3>
+              <ul className="footer-links">
+                <li>
+                  <button 
+                    onClick={() => handleSpecialistClick('Odontología')}
+                    className="ai-specialist-btn"
+                  >
+                    <i className="fas fa-angle-right"></i>Odontología
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleSpecialistClick('Fonoaudiología')}
+                    className="ai-specialist-btn"
+                  >
+                    <i className="fas fa-angle-right"></i>Fonoaudiología
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleSpecialistClick('Audiometría')}
+                    className="ai-specialist-btn"
+                  >
+                    <i className="fas fa-angle-right"></i>Audiometría
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleSpecialistClick('Oftalmología')}
+                    className="ai-specialist-btn"
+                  >
+                    <i className="fas fa-angle-right"></i>Oftalmología
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-col">
+              <h3>Contacto</h3>
+              <div className="footer-contact-item">
+                <div className="footer-contact-icon">
+                  <i className="fas fa-map-marker-alt"></i>
+                </div>
+                <p>Calle 21A #0B-122, Barrio Blanco, Cúcuta</p>
+              </div>
+              <div className="footer-contact-item">
+                <div className="footer-contact-icon">
+                  <i className="fas fa-phone-alt"></i>
+                </div>
+                <p>+57 3138914384</p>
+              </div>
+              <div className="footer-contact-item">
+                <div className="footer-contact-icon">
+                  <i className="fas fa-envelope"></i>
+                </div>
+                <p>admin@trabajosenalturaipsfigurascucuta.com</p>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>&copy; 2025 IPS FIGURAS SST CUCUTA SAS. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Back to Top Button */}
+      <a href="#inicio" className="back-to-top">
+        <i className="fas fa-arrow-up"></i>
+      </a>
+
+      {/* AI Specialist Modal */}
+      {isModalVisible && (
+        <div className="ai-modal visible">
+          <div className="ai-modal-content">
+            <button 
+              onClick={() => setIsModalVisible(false)}
+              className="ai-modal-close"
+            >
+              <i className="fas fa-times"></i>
+            </button>
+            <h3>Asistente de IA - {currentSpecialty}</h3>
+            <div className="form-group">
+              <input
+                type="text"
+                value={modalQuestion}
+                onChange={(e) => setModalQuestion(e.target.value)}
+                className="form-control"
+                placeholder="Escribe tu pregunta general aquí..."
+              />
+            </div>
+            <button 
+              onClick={handleModalSubmit}
+              className="btn btn-primary"
+              disabled={isLoading}
+            >
+              {isLoading ? 'Procesando...' : 'Enviar Pregunta'}
+            </button>
+            {isLoading && <div className="loading-spinner"></div>}
+            {modalResult && (
+              <div 
+                className="ai-result"
+                dangerouslySetInnerHTML={{ __html: modalResult }}
+              />
+            )}
+            <p className="ai-disclaimer" style={{fontSize: '0.8rem', marginTop: '15px'}}>
+              <strong>Nota:</strong> Esta es una herramienta informativa. No ingrese datos personales y consulte siempre a un médico para obtener consejos de salud.
+            </p>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        .symptoms-analyzer {
+          background-color: #f8f9fa;
+        }
+
+        .footer-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 40px 20px;
+        }
+
+        .footer-col {
+          margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+          margin-bottom: 20px;
+          color: #333;
+        }
+
+        .footer-links {
+          list-style: none;
+          padding: 0;
+        }
+
+        .footer-links li {
+          margin-bottom: 10px;
+        }
+
+        .footer-links a,
+        .ai-specialist-btn {
+          color: #666;
+          text-decoration: none;
+          transition: color 0.3s;
+          background: none;
+          border: none;
+          padding: 0;
+          font-size: inherit;
+          cursor: pointer;
+        }
+
+        .footer-links a:hover,
+        .ai-specialist-btn:hover {
+          color: #007bff;
+        }
+
+        .footer-contact-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .footer-contact-icon {
+          margin-right: 10px;
+          color: #007bff;
+        }
+
+        .footer-bottom {
+          text-align: center;
+          padding-top: 20px;
+          border-top: 1px solid #eee;
+          margin-top: 30px;
+        }
+
+        .ai-modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+        }
+
+        .ai-modal.visible {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .ai-modal-content {
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          max-width: 500px;
+          width: 90%;
+          max-height: 80vh;
+          overflow-y: auto;
+          position: relative;
+        }
+
+        .ai-modal-close {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+        }
+
+        .loading-spinner {
+          border: 2px solid #f3f3f3;
+          border-top: 2px solid #007bff;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          animation: spin 1s linear infinite;
+          margin: 20px auto;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        .form-status {
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: 15px;
+        }
+
+        .form-status.success {
+          background-color: #d4edda;
+          color: #155724;
+          border: 1px solid #c3e6cb;
+        }
+
+        .form-status.error {
+          background-color: #f8d7da;
+          color: #721c24;
+          border: 1px solid #f5c6cb;
+        }
+
+        .back-to-top {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          background-color: #007bff;
+          color: white;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s;
+        }
+
+        .back-to-top.active {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .ai-result {
+          margin-top: 20px;
+          padding: 15px;
+          background-color: #f8f9fa;
+          border-radius: 5px;
+          border-left: 4px solid #007bff;
+        }
+      `}</style>
+    </>
+  );
+};
+
+export default IPSFooterComponent;
+
+
+
+
+
+
+
+
