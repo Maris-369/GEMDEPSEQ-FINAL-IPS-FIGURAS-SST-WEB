@@ -1,0 +1,1 @@
+// Este archivo define tipos TypeScript para la aplicación.

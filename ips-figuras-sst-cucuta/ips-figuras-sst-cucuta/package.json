@@ -1,0 +1,17 @@
+﻿{
+  "name": "ips-figuras-sst-cucuta",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de IPS FIGURAS SST CUCUTA SAS - Medicina Laboral e Integral",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server",
+    "build": "echo 'Proyecto listo para producción'",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": ["IPS", "medicina laboral", "salud ocupacional", "Cúcuta"],
+  "author": "IPS FIGURAS SST CUCUTA SAS",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

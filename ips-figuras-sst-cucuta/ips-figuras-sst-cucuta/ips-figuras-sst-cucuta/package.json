@@ -1,0 +1,17 @@
+﻿{
+  "name": "ips-figuras-sst",
+  "version": "1.0.0",
+  "description": "IPS Figuras SST - Occupational Health and Safety Services in Cúcuta",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "live-server .",
+    "deploy": "netlify deploy --prod --dir ."
+  },
+  "keywords": ["ips", "sst", "salud-ocupacional", "cucuta", "figuras"],
+  "author": "IPS Figuras SST",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

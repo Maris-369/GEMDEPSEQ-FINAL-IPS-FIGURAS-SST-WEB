@@ -1,0 +1,42 @@
+{
+  "name": "ips-figuras-sst-cucuta-sas-web",
+  "version": "1.0.0",
+  "description": "Sistema web para IPS Figuras SST",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:main\" \"npm run dev:modules\"",
+    "dev:main": "vite --port 3000",
+    "dev:react": "cd ips-figuras-sst-cucuta/react-hybrid-app && npm run dev",
+    "dev:features": "cd ips-figuras-sst-cucuta/advanced-features && npm run dev",
+    "dev:token": "cd ips-figuras-sst-cucuta/Token && npm run dev",
+    "dev:modules": "concurrently \"npm run dev:react\" \"npm run dev:features\" \"npm run dev:token\"",
+    "build": "npm run build:main && npm run build:modules",
+    "build:main": "vite build",
+    "build:modules": "npm run build:react && npm run build:features && npm run build:token",
+    "build:react": "cd ips-figuras-sst-cucuta/react-hybrid-app && npm run build",
+    "build:features": "cd ips-figuras-sst-cucuta/advanced-features && npm run build",
+    "build:token": "cd ips-figuras-sst-cucuta/Token && npm run build",
+    "install:all": "npm install && npm run install:modules",
+    "install:modules": "cd ips-figuras-sst-cucuta/react-hybrid-app && npm install && cd ../advanced-features && npm install && cd ../Token && npm install",
+    "start": "npm run dev",
+    "clean": "rimraf node_modules dist && npm run clean:modules",
+    "clean:modules": "cd ips-figuras-sst-cucuta/react-hybrid-app && rimraf node_modules dist && cd ../advanced-features && rimraf node_modules dist && cd ../Token && rimraf node_modules dist"
+  },
+  "workspaces": [
+    "ips-figuras-sst-cucuta/react-hybrid-app",
+    "ips-figuras-sst-cucuta/advanced-features",
+    "ips-figuras-sst-cucuta/Token"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vite": "^5.0.0",
+    "rimraf": "^5.0.5"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "keywords": ["ips", "sst", "figuras", "healthcare", "web"],
+  "author": "IPS Figuras SST Cúcuta SAS & Marisol Barbosa Mercado",
+  "license": "MIT"
+}

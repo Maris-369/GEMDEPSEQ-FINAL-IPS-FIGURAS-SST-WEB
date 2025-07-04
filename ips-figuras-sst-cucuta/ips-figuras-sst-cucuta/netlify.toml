@@ -1,0 +1,25 @@
+﻿[build]
+  publish = "."
+  command = "echo 'Static site ready'"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+
+[[redirects]]
+  from = "/servicios"
+  to = "/pages/servicios.html"
+  status = 200
+
+[[redirects]]
+  from = "/contacto"
+  to = "/pages/contacto.html"
+  status = 200
+
+[[redirects]]
+  from = "/nosotros"
+  to = "/pages/nosotros.html"
+  status = 200
