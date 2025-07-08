@@ -1,0 +1,25 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\index-html trabajo-ips-figuras-web\\GEMDEPSEQ-FINAL-IPS-FIGURAS-SST-WEB-1\\ips-figuras-sst-cucuta\\ips-figuras-sst-cucuta\\ips-figuras-sst-cucuta"
+publishOrigin = "default"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
