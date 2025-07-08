@@ -1,0 +1,50 @@
+GEMDEPSEQ-FINAL-IPS-FIGURAS-SST-WEB/ .github/ flujos de trabajo
+/proceso-3d.yml
+
+# Archivo: .github/workflows/process-3d.yml
+name: Process 3D Models
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  process-3d:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📋 Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: 📦 Install GLTF Tools
+      run: |
+        npm install -g gltf-pipeline
+        # Draco compression ya está incluido en gltf-pipeline
+        # NO necesitamos: sudo apt-get install -y draco-tools
+        
+    - name: 🗂️ Create output directory
+      run: mkdir -p processed-models
+      
+    - name: 🔄 Process 3D models
+      run: |
+        # Procesar archivos GLTF/GLB con compresión Draco
+        for file in models/*.{gltf,glb}; do
+          if [ -f "$file" ]; then
+            filename=$(basename "$file")
+            echo "Processing: $filename"
+            gltf-pipeline -i "$file" -o "processed-models/$filename" --draco.compressionLevel 7
+          fi
+        done
+        
+    - name: 📤 Upload processed models
+      uses: actions/upload-artifact@v3
+      with:
+        name: processed-3d-models
+        path: processed-models/

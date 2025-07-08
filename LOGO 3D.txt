@@ -1,0 +1,597 @@
+LOGO 3D
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS - Cubo 3D Interactivo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .cube-container {
+            perspective: 1000px;
+            position: relative;
+        }
+
+        .cube {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 15s infinite linear;
+            cursor: grab;
+            transition: transform 0.3s ease;
+        }
+
+        .cube:active {
+            cursor: grabbing;
+        }
+
+        .face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            border: 3px solid rgba(255,255,255,0.3);
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .face:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255,255,255,0.5);
+        }
+
+        .front {
+            background: linear-gradient(45deg, #2E7D32, #4CAF50);
+            transform: rotateY(0deg) translateZ(150px);
+        }
+
+        .back {
+            background: linear-gradient(45deg, #1565C0, #2196F3);
+            transform: rotateY(180deg) translateZ(150px);
+        }
+
+        .right {
+            background: linear-gradient(45deg, #00d2d3, #54a0ff);
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        .left {
+            background: linear-gradient(45deg, #5f27cd, #a55eea);
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        .top {
+            background: linear-gradient(45deg, #01a3a4, #2ed573);
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        .bottom {
+            background: linear-gradient(45deg, #ffa726, #ff7043);
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        .logo-container {
+            text-align: center;
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+
+        .logo-main {
+            font-size: 36px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .logo-subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .logo-location {
+            font-size: 14px;
+            font-weight: 300;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .medical-symbol {
+            font-size: 32px;
+            margin-bottom: 8px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .orbit-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px;
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255,255,255,0.6);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit:nth-child(1) {
+            animation: orbit1 4s linear infinite;
+        }
+
+        .orbit:nth-child(2) {
+            animation: orbit2 4s linear infinite reverse;
+            transform: translate(-50%, -50%) rotate(60deg);
+        }
+
+        .orbit:nth-child(3) {
+            animation: orbit3 4s linear infinite;
+            transform: translate(-50%, -50%) rotate(120deg);
+        }
+
+        .center-symbol {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            z-index: 10;
+        }
+
+        @keyframes orbit1 {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes orbit2 {
+            0% { transform: translate(-50%, -50%) rotate(60deg); }
+            100% { transform: translate(-50%, -50%) rotate(420deg); }
+        }
+
+        @keyframes orbit3 {
+            0% { transform: translate(-50%, -50%) rotate(120deg); }
+            100% { transform: translate(-50%, -50%) rotate(480deg); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            25% { transform: rotateX(90deg) rotateY(90deg); }
+            50% { transform: rotateX(180deg) rotateY(180deg); }
+            75% { transform: rotateX(270deg) rotateY(270deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .control-btn {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .info-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            backdrop-filter: blur(10px);
+            max-width: 300px;
+        }
+
+        .info-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4fc3f7;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            animation: float-particle 6s ease-in-out infinite;
+        }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: glow 4s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes glow {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+        }
+
+        .worker-icon {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .cube {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .face {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .front, .back { transform: rotateY(0deg) translateZ(100px); }
+            .back { transform: rotateY(180deg) translateZ(100px); }
+            .right { transform: rotateY(90deg) translateZ(100px); }
+            .left { transform: rotateY(-90deg) translateZ(100px); }
+            .top { transform: rotateX(90deg) translateZ(100px); }
+            .bottom { transform: rotateX(-90deg) translateZ(100px); }
+            
+            .logo-main { font-size: 24px; }
+            .logo-subtitle { font-size: 14px; }
+            .orbit-container { width: 60px; height: 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="glow-effect"></div>
+    
+    <div class="controls">
+        <button class="control-btn" onclick="toggleAnimation()">⏯️ Pausar/Reanudar</button>
+        <button class="control-btn" onclick="resetRotation()">🔄 Reiniciar</button>
+        <button class="control-btn" onclick="changeSpeed()">⚡ Velocidad</button>
+    </div>
+
+    <div class="container">
+        <div class="cube-container">
+            <div class="cube" id="cube">
+                <div class="face front">
+                    <div class="logo-container">
+                        <div class="orbit-container">
+                            <div class="orbit"></div>
+                            <div class="orbit"></div>
+                            <div class="orbit"></div>
+                            <div class="center-symbol">⚕️</div>
+                        </div>
+                        <div class="logo-main">FIGURAS SST</div>
+                        <div class="logo-location">CÚCUTA IPS</div>
+                    </div>
+                </div>
+                <div class="face back">
+                    <div class="logo-container">
+                        <div class="medical-symbol">⚕️</div>
+                        <div class="logo-main">SALUD</div>
+                        <div class="logo-subtitle">OCUPACIONAL</div>
+                        <div class="logo-location">CÚCUTA</div>
+                    </div>
+                </div>
+                <div class="face right">
+                    <div class="logo-container">
+                        <div class="worker-icon">👷‍♂️</div>
+                        <div class="logo-main">SST</div>
+                        <div class="logo-subtitle">SEGURIDAD</div>
+                        <div class="logo-location">TRABAJO</div>
+                    </div>
+                </div>
+                <div class="face left">
+                    <div class="logo-container">
+                        <div class="worker-icon">🛡️</div>
+                        <div class="logo-main">FIGURAS</div>
+                        <div class="logo-subtitle">PROTECCIÓN</div>
+                        <div class="logo-location">LABORAL</div>
+                    </div>
+                </div>
+                <div class="face top">
+                    <div class="logo-container">
+                        <div class="worker-icon">🏥</div>
+                        <div class="logo-main">IPS</div>
+                        <div class="logo-subtitle">EXCELENCIA</div>
+                        <div class="logo-location">SERVICIOS</div>
+                    </div>
+                </div>
+                <div class="face bottom">
+                    <div class="logo-container">
+                        <div class="worker-icon">✓</div>
+                        <div class="logo-main">CALIDAD</div>
+                        <div class="logo-subtitle">CONFIANZA</div>
+                        <div class="logo-location">PROFESIONAL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-panel">
+        <div class="info-title">🏥 FIGURAS SST - CÚCUTA IPS</div>
+        <p>Cubo 3D interactivo que representa los servicios de Salud y Seguridad en el Trabajo de nuestra institución.</p>
+        <br>
+        <p><strong>Servicios:</strong></p>
+        <p>• Salud Ocupacional</p>
+        <p>• Seguridad y Salud en el Trabajo</p>
+        <p>• Protección Laboral</p>
+        <br>
+        <p><strong>Controles:</strong></p>
+        <p>• Haz clic y arrastra para rotar</p>
+        <p>• Usa los botones de control</p>
+    </div>
+
+    <script>
+        let isAnimating = true;
+        let currentSpeed = 15;
+        let isDragging = false;
+        let startX, startY;
+        let currentRotationX = 0;
+        let currentRotationY = 0;
+
+        const cube = document.getElementById('cube');
+
+        // Crear partículas flotantes
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Control de animación
+        function toggleAnimation() {
+            isAnimating = !isAnimating;
+            if (isAnimating) {
+                cube.style.animation = `rotate ${currentSpeed}s infinite linear`;
+            } else {
+                cube.style.animation = 'none';
+            }
+        }
+
+        // Reiniciar rotación
+        function resetRotation() {
+            cube.style.animation = 'none';
+            cube.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            currentRotationX = 0;
+            currentRotationY = 0;
+            setTimeout(() => {
+                if (isAnimating) {
+                    cube.style.animation = `rotate ${currentSpeed}s infinite linear`;
+                }
+            }, 100);
+        }
+
+        // Cambiar velocidad
+        function changeSpeed() {
+            const speeds = [5, 10, 15, 20, 30];
+            const currentIndex = speeds.indexOf(currentSpeed);
+            currentSpeed = speeds[(currentIndex + 1) % speeds.length];
+            
+            if (isAnimating) {
+                cube.style.animation = `rotate ${currentSpeed}s infinite linear`;
+            }
+            
+            // Mostrar notificación temporal
+            showNotification(`Velocidad: ${currentSpeed}s`);
+        }
+
+        // Mostrar notificación
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: rgba(0,0,0,0.8);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-weight: bold;
+                z-index: 10000;
+                animation: fadeInOut 2s ease-in-out;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 2000);
+        }
+
+        // Agregar estilos para la animación de notificación
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateX(100px); }
+                20%, 80% { opacity: 1; transform: translateX(0); }
+                100% { opacity: 0; transform: translateX(100px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Control manual con mouse/touch
+        cube.addEventListener('mousedown', startDrag);
+        cube.addEventListener('touchstart', startDrag);
+
+        function startDrag(e) {
+            isDragging = true;
+            cube.style.animation = 'none';
+            
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+            
+            startX = clientX;
+            startY = clientY;
+            
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('touchmove', drag);
+            document.addEventListener('mouseup', endDrag);
+            document.addEventListener('touchend', endDrag);
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            
+            e.preventDefault();
+            
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+            
+            const deltaX = clientX - startX;
+            const deltaY = clientY - startY;
+            
+            currentRotationY += deltaX * 0.5;
+            currentRotationX -= deltaY * 0.5;
+            
+            cube.style.transform = `rotateX(${currentRotationX}deg) rotateY(${currentRotationY}deg)`;
+            
+            startX = clientX;
+            startY = clientY;
+        }
+
+        function endDrag() {
+            isDragging = false;
+            
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('touchmove', drag);
+            document.removeEventListener('mouseup', endDrag);
+            document.removeEventListener('touchend', endDrag);
+            
+            setTimeout(() => {
+                if (isAnimating) {
+                    cube.style.animation = `rotate ${currentSpeed}s infinite linear`;
+                }
+            }, 1000);
+        }
+
+        // Efectos de hover en las caras
+        const faces = document.querySelectorAll('.face');
+        faces.forEach(face => {
+            face.addEventListener('mouseenter', () => {
+                if (!isDragging) {
+                    face.style.transform += ' scale(1.05)';
+                }
+            });
+            
+            face.addEventListener('mouseleave', () => {
+                face.style.transform = face.style.transform.replace(' scale(1.05)', '');
+            });
+        });
+
+        // Detectar orientación en móviles
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                location.reload();
+            }, 500);
+        });
+
+        // Inicializar
+        createParticles();
+        
+        // Mostrar bienvenida
+        setTimeout(() => {
+            showNotification('¡Bienvenido a FIGURAS SST! 🏥');
+        }, 1000);
+
+        // Easter egg: doble click para efecto especial
+        cube.addEventListener('dblclick', () => {
+            cube.style.animation = 'rotate 1s infinite linear, pulse 0.5s ease-in-out';
+            setTimeout(() => {
+                cube.style.animation = isAnimating ? `rotate ${currentSpeed}s infinite linear` : 'none';
+            }, 2000);
+            showNotification('¡Efecto especial activado! ✨');
+        });
+    </script>
+</body>
+</html>
