@@ -12,6 +12,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@react-three/drei": "^10.5.0",
+    "@react-three/fiber": "^9.2.0",
     "gatsby": "^5.14.5",
     "gatsby-plugin-image": "^3.0.0",
     "gatsby-plugin-manifest": "^5.0.0",
@@ -20,7 +22,9 @@
     "gatsby-plugin-sharp": "^5.0.0",
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
+    "path-to-regexp": "^6.3.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "workbox-build": "^7.3.0"
   }
 }
