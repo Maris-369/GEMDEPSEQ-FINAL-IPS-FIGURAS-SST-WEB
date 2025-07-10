@@ -1,0 +1,794 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>IPS FIGURAS SST CÚCUTA SAS - Logo 3D Interactivo</title>
+    
+    <!-- Meta tags para PWA -->
+    <meta name="description" content="IPS FIGURAS SST CÚCUTA SAS - Seguridad y Salud en el Trabajo">
+    <meta name="theme-color" content="#1e40af">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicon optimizado -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e40af'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='white' stroke-width='7'/%3E%3Cg stroke='%2322c55e' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M50,82 V28'/%3E%3Cpath d='M50,34 C40,26 30,30 30,30'/%3E%3Cpath d='M50,34 C60,26 70,30 70,30'/%3E%3Cpath d='M60,78 C45,88 35,65 50,55 C65,45 55,22 55,22'/%3E%3Cpath d='M40,78 C55,88 65,65 50,55 C35,45 45,22 45,22'/%3E%3C/g%3E%3C/svg%3E" type="image/svg+xml">
+    
+    <style>
+        /* Variables CSS para mejor mantenimiento */
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #2563eb;
+            --accent-green: #22c55e;
+            --dark-green: #16a34a;
+            --gold: #f59e0b;
+            --glass-bg: rgba(37, 99, 235, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --shadow-color: rgba(34, 197, 94, 0.3);
+            --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --border-radius: 15px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e40af 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            perspective: 1200px;
+            overflow: hidden;
+            position: relative;
+            touch-action: manipulation;
+        }
+
+        /* Fondo animado mejorado */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 20% 20%, var(--accent-green) 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, var(--secondary-blue) 0%, transparent 30%),
+                radial-gradient(circle at 40% 60%, var(--primary-blue) 0%, transparent 20%);
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        .scene {
+            width: min(90vw, 400px);
+            height: min(90vh, 400px);
+            position: relative;
+            transform-style: preserve-3d;
+            animation: sceneRotate 15s linear infinite;
+            transition: var(--transition);
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: cubeFloat 8s ease-in-out infinite;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--glass-border);
+            background: linear-gradient(135deg, 
+                rgba(37, 99, 235, 0.15), 
+                rgba(29, 78, 216, 0.12), 
+                rgba(30, 64, 175, 0.1));
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius);
+            box-shadow: 
+                inset 0 0 50px rgba(255, 255, 255, 0.1),
+                0 0 30px var(--shadow-color),
+                0 8px 32px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .cube-face::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, 
+                rgba(34, 197, 94, 0.15) 0%, 
+                transparent 70%);
+            animation: faceGlow 6s ease-in-out infinite alternate;
+            border-radius: var(--border-radius);
+        }
+
+        /* Posicionamiento de caras mejorado */
+        .front { transform: rotateY(0deg) translateZ(calc(min(90vw, 400px) / 2)); }
+        .back { transform: rotateY(180deg) translateZ(calc(min(90vw, 400px) / 2)); }
+        .right { transform: rotateY(90deg) translateZ(calc(min(90vw, 400px) / 2)); }
+        .left { transform: rotateY(-90deg) translateZ(calc(min(90vw, 400px) / 2)); }
+        .top { transform: rotateX(90deg) translateZ(calc(min(90vw, 400px) / 2)); }
+        .bottom { transform: rotateX(-90deg) translateZ(calc(min(90vw, 400px) / 2)); }
+
+        .circular-logo {
+            position: relative;
+            width: clamp(120px, 60%, 200px);
+            height: clamp(120px, 60%, 200px);
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+            box-shadow: 
+                0 0 40px rgba(37, 99, 235, 0.8),
+                inset 0 0 40px rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: logoSpin 12s linear infinite;
+            transition: var(--transition);
+        }
+
+        .circular-logo::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-green), var(--dark-green));
+            z-index: -1;
+            animation: borderSpin 4s linear infinite;
+        }
+
+        .caduceus {
+            position: relative;
+            width: 60%;
+            height: 70%;
+            transform-style: preserve-3d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .staff {
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            width: 6px;
+            height: 80%;
+            background: linear-gradient(180deg, #fbbf24, var(--gold), #d97706);
+            transform: translateX(-50%);
+            border-radius: 3px;
+            box-shadow: 0 0 12px rgba(251, 191, 36, 0.7);
+        }
+
+        .wings {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 25%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wing {
+            width: 35%;
+            height: 60%;
+            background: linear-gradient(135deg, var(--accent-green), var(--dark-green));
+            border-radius: 50% 20% 50% 20%;
+            animation: wingFlutter 2s ease-in-out infinite;
+            box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+        }
+
+        .wing.left {
+            transform-origin: right center;
+        }
+
+        .wing.right {
+            transform-origin: left center;
+            transform: scaleX(-1);
+        }
+
+        .snake {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 55%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .snake-body {
+            width: 8px;
+            height: 70%;
+            background: linear-gradient(180deg, var(--accent-green), var(--dark-green));
+            border-radius: 4px;
+            animation: snakeMove 3s ease-in-out infinite;
+            box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+        }
+
+        .snake-body.left {
+            animation-delay: 0s;
+        }
+
+        .snake-body.right {
+            animation-delay: -1.5s;
+        }
+
+        .text-display {
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            bottom: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(10px, 2.5vw, 16px);
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: var(--text-shadow);
+            line-height: 1.3;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            padding: 10px;
+        }
+
+        .company-name {
+            font-size: clamp(12px, 3vw, 18px);
+            background: linear-gradient(45deg, #ffffff, var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGlow 4s ease-in-out infinite alternate;
+        }
+
+        .service-text {
+            font-size: clamp(10px, 2.2vw, 14px);
+            opacity: 0.95;
+            color: #e2e8f0;
+        }
+
+        /* Partículas mejoradas */
+        .floating-particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: particleFloat 8s ease-in-out infinite;
+            box-shadow: 0 0 6px var(--accent-green);
+        }
+
+        /* Controles mejorados */
+        .control-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            color: white;
+            font-size: 14px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .control-panel h3 {
+            margin-bottom: 15px;
+            color: var(--accent-green);
+            font-size: 16px;
+        }
+
+        .control-panel button {
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            margin: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .control-panel button:hover {
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+
+        .control-panel button:active {
+            transform: translateY(0);
+        }
+
+        /* Indicador de carga */
+        .loading-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--accent-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            z-index: 2000;
+        }
+
+        /* Animaciones mejoradas */
+        @keyframes backgroundShift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(30deg); }
+        }
+
+        @keyframes sceneRotate {
+            0% { transform: rotateX(15deg) rotateY(0deg); }
+            25% { transform: rotateX(25deg) rotateY(90deg); }
+            50% { transform: rotateX(15deg) rotateY(180deg); }
+            75% { transform: rotateX(5deg) rotateY(270deg); }
+            100% { transform: rotateX(15deg) rotateY(360deg); }
+        }
+
+        @keyframes cubeFloat {
+            0%, 100% { transform: translateY(0px) rotateX(0deg); }
+            50% { transform: translateY(-25px) rotateX(8deg); }
+        }
+
+        @keyframes logoSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes borderSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        @keyframes wingFlutter {
+            0%, 100% { transform: rotateZ(0deg) scale(1); }
+            50% { transform: rotateZ(-15deg) scale(1.05); }
+        }
+
+        @keyframes snakeMove {
+            0%, 100% { transform: translateX(0) rotateZ(0deg); }
+            25% { transform: translateX(8px) rotateZ(12deg); }
+            75% { transform: translateX(-8px) rotateZ(-12deg); }
+        }
+
+        @keyframes faceGlow {
+            0% { opacity: 0.2; }
+            100% { opacity: 0.6; }
+        }
+
+        @keyframes particleFloat {
+            0% { 
+                opacity: 0; 
+                transform: translateY(100vh) scale(0); 
+            }
+            10% { 
+                opacity: 1; 
+                transform: translateY(90vh) scale(1); 
+            }
+            90% { 
+                opacity: 1; 
+                transform: translateY(-10vh) scale(1); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: translateY(-20vh) scale(0); 
+            }
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(34, 197, 94, 0.8); }
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Estados de pausa */
+        .paused {
+            animation-play-state: paused !important;
+        }
+
+        .paused * {
+            animation-play-state: paused !important;
+        }
+
+        /* Responsive design mejorado */
+        @media (max-width: 768px) {
+            .control-panel {
+                top: 10px;
+                right: 10px;
+                padding: 15px;
+                font-size: 12px;
+            }
+            
+            .control-panel button {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scene {
+                width: 90vw;
+                height: 90vw;
+            }
+            
+            .control-panel {
+                top: 5px;
+                right: 5px;
+                padding: 10px;
+            }
+            
+            .control-panel button {
+                padding: 8px 12px;
+                margin: 3px;
+            }
+        }
+
+        /* Soporte para modo oscuro del sistema */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --glass-bg: rgba(37, 99, 235, 0.08);
+                --glass-border: rgba(255, 255, 255, 0.12);
+            }
+        }
+
+        /* Efectos de hover para interactividad */
+        .scene:hover {
+            transform: scale(1.05);
+            animation-duration: 10s;
+        }
+
+        .cube-face:hover {
+            box-shadow: 
+                inset 0 0 50px rgba(255, 255, 255, 0.15),
+                0 0 50px var(--shadow-color),
+                0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Accesibilidad mejorada */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-indicator" id="loadingIndicator"></div>
+    <div class="background-animation"></div>
+    
+    <div class="floating-particles" id="particlesContainer"></div>
+    
+    <div class="scene" id="scene">
+        <div class="cube">
+            <!-- Cara frontal -->
+            <div class="cube-face front">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="company-name">IPS FIGURAS<br>SST CÚCUTA SAS</div>
+                </div>
+            </div>
+            
+            <!-- Cara trasera -->
+            <div class="cube-face back">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Seguridad y Salud<br>en el Trabajo</div>
+                </div>
+            </div>
+            
+            <!-- Cara derecha -->
+            <div class="cube-face right">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Exámenes<br>Médicos<br>Ocupacionales</div>
+                </div>
+            </div>
+            
+            <!-- Cara izquierda -->
+            <div class="cube-face left">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Capacitaciones<br>en SST</div>
+                </div>
+            </div>
+            
+            <!-- Cara superior -->
+            <div class="cube-face top">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Asesoría<br>Profesional</div>
+                </div>
+            </div>
+            
+            <!-- Cara inferior -->
+            <div class="cube-face bottom">
+                <div class="circular-logo">
+                    <div class="caduceus">
+                        <div class="staff"></div>
+                        <div class="wings">
+                            <div class="wing left"></div>
+                            <div class="wing right"></div>
+                        </div>
+                        <div class="snake">
+                            <div class="snake-body left"></div>
+                            <div class="snake-body right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-display">
+                    <div class="service-text">Cúcuta<br>Norte de Santander</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="control-panel">
+        <h3>Controles</h3>
+        <button onclick="toggleAnimation()" id="playPauseBtn">⏸️ Pausar</button>
+        <button onclick="resetAnimation()">🔄 Reiniciar</button>
+        <button onclick="toggleSpeed()">⚡ Velocidad</button>
+        <button onclick="toggleFullscreen()">🖼️ Pantalla</button>
+    </div>
+    
+    <script>
+        let isPaused = false;
+        let isHighSpeed = false;
+        let animationSpeed = 1;
+        
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+        
+        function initializeApp() {
+            createParticles();
+            setupTouchEvents();
+            hideLoadingIndicator();
+        }
+        
+        function hideLoadingIndicator() {
+            setTimeout(() => {
+                const loading = document.getElementById('loadingIndicator');
+                if (loading) {
+                    loading.style.display = 'none';
+                }
+            }, 1000);
+        }
+        
+        function toggleAnimation() {
+            const scene = document.getElementById('scene');
+            const body = document.body;
+            const btn = document.getElementById('playPauseBtn');
+            
+            if (isPaused) {
+                scene.classList.remove('paused');
+                body.classList.remove('paused');
+                btn.textContent = '⏸️ Pausar';
+                isPaused = false;
+            } else {
+                scene.classList.add('paused');
+                body.classList.add('paused');
+                btn.textContent = '▶️ Reanudar';
+                isPaused = true;
+            }
+        }
+        
+        function resetAnimation() {
+            const scene = document.getElementById('scene');
+            const body = document.body;
+            const btn = document.getElementById('playPauseBtn');
+            
+            // Remover clases de pausa
+            scene.classList.remove('paused');
+            body.classList.remove('paused');
+            
+            // Reiniciar animaciones
+            scene.style.animation = 'none';
+            setTimeout(() => {
+                scene.style.animation = `sceneRotate ${15 / animationSpeed}s linear infinite`;
+            }, 10);
+            
+            btn.textContent = '⏸️ Pausar';
+            isPaused = false;
+        }
+        
+        function toggleSpeed() {
+            isHighSpeed = !isHighSpeed;
+            animationSpeed = isHighSpeed ? 2 : 1;
+            
+            const scene = document.getElementById('scene');
+            const cube = document.querySelector('.cube');
+            
+            // Aplicar nueva velocidad
+            scene.style.animationDuration = `${15 / animationSpeed}s`;
+            cube.style.animationDuration = `${8 / animationSpeed}s`;
+            
+            // Actualizar todas las animaciones
+            document.querySelectorAll('.circular-logo').forEach(logo => {
+                logo.style.animationDuration = `${12 / animationSpeed}s`;
+            });
+            
+            document.querySelectorAll('.wing').forEach(wing => {
+                wing.style.animationDuration = `${2 / animationSpeed}s`;
+            });
+            
+            document.querySelectorAll('.snake-body').forEach(snake => {
+                snake.style.animationDuration = `${3 / animationSpeed}s`;
+            });
+        }
+        
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log('Error al entrar en pantalla completa:', err);
+                });
+            } else {
+                document.exitFullscreen().catch(err => {
+                    console.log('Error al salir de pantalla completa:', err);
+                });
+            }
+        }
+        
+        // Generar partículas dinámicamente
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            const particleCount = window.innerWidth < 768 ? 20 : 30;
+            
+            // Limpiar partículas existentes
+            container.innerHTML = '';
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (6 + Math.random() * 4) + 's';
+                
+                // Variar tamaño y opacidad
+                const size = 3 + Math.random() * 3;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.opacity = 0.7 + Math.random() * 0.3;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Eventos táctiles para dispositivos móviles
+        function setupTouchEvents() {
+            const scene = document.getElementById('scene');
+            let touchStartX = 0;
+            let touchStartY = 0;
+            
+            scene.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+            });
+            
+            scene.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                const touchX = e.touches[0].clientX;
+                const touchY = e.touches[0].clientY;
+                
+                const deltaX = touchX - touchStartX;
+                const deltaY = touchY - touchStartY;
+                
+                // Aplicar rotación basada en el movimiento del dedo
+                const rotationY = deltaX * 0.5;
+                const rotationX = -deltaY * 0.5;
+                
+                scene.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+            });
+            
+            scene.addEventListener('touchend', () => {
+                // Volver a la animación normal después de un tiempo
+                setTimeout(() =>

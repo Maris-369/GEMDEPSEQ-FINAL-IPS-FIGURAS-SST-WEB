@@ -13,7 +13,7 @@ export const PageHead = () => (
     <meta name="author" content="IPS FIGURAS SST CÚCUTA SAS" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.trabajosenalturascucuta.com/" />
+    <meta property="og:url" content="https://www.trabajosenalturaipsfigurascucuta.com/" />
     <meta property="og:title" content="IPS FIGURAS SST CÚCUTA SAS | Salud Ocupacional Integral y Humanizada" />
     <meta property="og:description" content="Especialistas en salud ocupacional y medicina laboral en Cúcuta. Ofrecemos exámenes médicos, cursos y atención de calidad con un enfoque humano." />
     {/* Asegúrate que esta imagen exista en 'static/images/og-image.jpg' */}
@@ -110,6 +110,32 @@ const PaginaDeInicio = () => {
           </div>
         </div>
       </header>
+<body>
+    <div class="title">IPS FIGURAS SST CUCUTA SAS</div>
+    <div class="info">Cubo 3D Interactivo</div>
+    <div class="logo-text">Seguridad y Salud en el Trabajo</div>
+    
+    <div class="container">
+        <div class="cube" id="cube">
+            <div class="face front">SEGURIDAD<br>IPS FIGURAS SST</div>
+            <div class="face back">SALUD<br>CUCUTA</div>
+            <div class="face right">TRABAJO</div>
+            <div class="face left">PREVENCIÓN</div>
+            <div class="face top">FORMACIÓN</div>
+            <div class="face bottom">CULTURA</div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        Usa las flechas del teclado para rotar manualmente • Presiona ESPACIO para pausar/continuar • Pasa el mouse sobre el cubo para interactuar
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="pauseRotation()">⏸️ Pausar</button>
+        <button class="btn" onclick="resumeRotation()">▶️ Continuar</button>
+        <button class="btn" onclick="changeSpeed()">⚡ Velocidad</button>
+        <button class="btn" onclick="resetPosition()">🔄 Reset</button>
+    </div>
 
       {/* Hero Section */}
       <section className="hero" id="inicio">

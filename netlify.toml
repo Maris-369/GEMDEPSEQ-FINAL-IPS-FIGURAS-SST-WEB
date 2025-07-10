@@ -1,4 +1,8 @@
-# netlify.toml
 [build]
+  publish = "public"
   command = "npm run build"
-  publish ="public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
